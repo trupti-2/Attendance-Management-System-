@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Report Attendance">d5e68b5ac3c4221089cf1c377d0131ef</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-05 11:05:20</sys_created_on>
+        <sys_id>35e68b5ac3c4221089cf1c377d0131f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>d5e68b5ac3c4221089cf1c377d0131ef</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_report_users_groups_35e68b5ac3c4221089cf1c377d0131f0</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-05 11:05:20</sys_updated_on>
+        <user_id display_value="Trupti Bidave">f939fc33c31f121089cf1c377d013158</user_id>
+    </sys_report_users_groups>
+</record_update>

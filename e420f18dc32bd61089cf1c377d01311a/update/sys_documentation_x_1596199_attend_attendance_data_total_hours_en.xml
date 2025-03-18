@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="total_hours" label="Total Hours" language="en" table="x_1596199_attend_attendance_data">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>total_hours</element>
+            <help/>
+            <hint/>
+            <label>Total Hours</label>
+            <language>en</language>
+            <name>x_1596199_attend_attendance_data</name>
+            <plural>Total Hours</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:31:09</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Total Hours</sys_name>
+            <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+            <sys_update_name>sys_documentation_x_1596199_attend_attendance_data_total_hours_en</sys_update_name>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:31:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

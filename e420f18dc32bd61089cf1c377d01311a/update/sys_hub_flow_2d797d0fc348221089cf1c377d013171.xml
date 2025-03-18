@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=496210000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>checkout_reminder</internal_name>
+        <label_cache>[{"name":"Created_1.current.status","label":"Trigger - Record Created➛Attendance Data Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1596199_attend_attendance_data","column_name":"status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Checked-In","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Checked-In","value":"Checked-In","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}},{"used":false,"label":"Checked-Out","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Checked-Out","value":"Checked-Out","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}},{"used":false,"label":"Not Checked-In","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Not Checked-In","value":"Not Checked-In","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}}],"usedInstances":{"734f2434-08b6-4402-aeb1-8e881a7f10e6":["condition"],"59ff2248-b58d-45e0-a801-683266d294ec":["condition"],"64558c2e-7849-4fb8-8539-2ebaf13ad900":["wait_for_completion"]}},{"name":"Created_1.run_start_date_time","label":"Trigger - Record Created➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.employee.last_name","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"last_name","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.current.employee.first_name","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.current.check_in_time","label":"Trigger - Record Created➛Attendance Data Record➛Check In time","reference":"","reference_display":"Check In time","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1596199_attend_attendance_data","column_name":"check_in_time","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.run_start_time","label":"Trigger - Record Created➛Run Start Time UTC","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.employee","label":"Trigger - Record Created➛Attendance Data Record➛Employee","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1596199_attend_attendance_data","column_name":"employee","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null]}},{"name":"Created_1.current.employee.email","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":["ah_to"],"862766eb-b6f6-4fcb-8a68-08dedbda154a":["ah_to"],"347d1ce9-1906-4855-b53a-08be5fbb9693":["ah_to"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Attendance Data Record","reference":"x_1596199_attend_attendance_data","reference_display":"Attendance Data","type":"reference","base_type":"reference","usedInstances":{"c06d2c7b-b161-4a23-8be8-247e2aadb6fc":["record"]},"attributes":{}},{"name":"Created_1.table_name","label":"Trigger - Record Created➛Attendance Data Table","reference":"x_1596199_attend_attendance_data","reference_display":"Attendance Data","type":"table_name","base_type":"table_name","usedInstances":{"25be92ee-2278-43d2-9e0c-56f8ae090d00":["task_table"]},"attributes":{"test_input_hidden":"true"}}]</label_cache>
+        <master_snapshot>d4d76444c394221089cf1c377d01316c</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Checkout Reminder</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>4f33f084c3d4221089cf1c377d0131fe</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 13:22:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2d797d0fc348221089cf1c377d013171</sys_id>
+        <sys_mod_count>43</sys_mod_count>
+        <sys_name>Checkout Reminder</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_hub_flow_2d797d0fc348221089cf1c377d013171</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:41</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=2d797d0fc348221089cf1c377d013171"/>
+    <sys_variable_value action="delete_multiple" query="document_key=2d797d0fc348221089cf1c377d013171"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1596199_attend_attendance_data">status=Checked-In<item display_value="Checked-In" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="Checked-In"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4f33f084c3d4221089cf1c377d0131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:31</sys_updated_on>
+        <table>x_1596199_attend_attendance_data</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>2d797d0fc348221089cf1c377d013171</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-13 08:12:41</sys_created_on>
+        <sys_id>321c67f4c314221089cf1c377d01313b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:41</sys_updated_on>
+        <trigger display_value="">4f33f084c3d4221089cf1c377d0131fe</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=2d797d0fc348221089cf1c377d013171^sys_idNOT IN321c67f4c314221089cf1c377d01313b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=2d797d0fc348221089cf1c377d013171"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=2d797d0fc348221089cf1c377d013171^sys_idNOT INe1797d0fc348221089cf1c377d013174"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>2d797d0fc348221089cf1c377d013171</id>
+        <name>Checkout Reminder</name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 13:22:26</sys_created_on>
+        <sys_id>e1797d0fc348221089cf1c377d013174</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-07 13:22:26</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=e1797d0fc348221089cf1c377d013174"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=2d797d0fc348221089cf1c377d013171^sys_idNOT IN01819484c314221089cf1c377d013150,f8815cccc3d0221089cf1c377d01316d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</model>
+        <model_id>2d797d0fc348221089cf1c377d013171</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 08:22:13</sys_created_on>
+        <sys_id>01819484c314221089cf1c377d013150</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 08:22:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=01819484c314221089cf1c377d013150"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</model>
+        <model_id>2d797d0fc348221089cf1c377d013171</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 08:22:11</sys_created_on>
+        <sys_id>f8815cccc3d0221089cf1c377d01316d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 08:22:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f8815cccc3d0221089cf1c377d01316d"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=2d797d0fc348221089cf1c377d013171"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2d797d0fc348221089cf1c377d013171"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=2d797d0fc348221089cf1c377d013171^sys_idNOT IN15819484c314221089cf1c377d013182"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 08:22:13</sys_created_on>
+        <sys_id>15819484c314221089cf1c377d013182</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:18</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VY227bOBD9FUFPu4AX0MWXKG+pnWIDdBvAcXcf0kCgpKEtlKa8EqXEW+Tfd6ibZV0c39IkLy1MUpwzh2fOkLn/qTLiAFMv1RlxGKg91ecCQk7YbL0CHBZy2OZkKeeWhHtEBOFavRRhDD01CD0I1Uu9pyaExXC3jm48/AiXpl/kn6v5NP5+svWBNdQtyyZCAPfy/wh3wcatCS71/GjFyPrv/IurcoEyyRa4C595IXD18v6hp65IiKGEhPGzNuVLLC51iWWA5pq6aRiaZlz0dWdoOrrhmQQ0DTesU1DDLlqY2CQOTxIfYChKWAQtJIVAvFvO1uWKBXKcsbQkT5H/H+5+ocl1FBC7C9lc+dPOGcmG3UXgu3C7En7As5EMZzYZsHjJv2b4JZdAScxEwSWOxBHuBysJWYLIEdG7RfA4LQJ+9nmaXT7JApew8hceWOg7sYBIEk59htTbGTdREIcp+un1+HY6sf+5mo3/vJ7a0+u72fRmPLueqM9pXva/sdwxQ5hjsbN0nksBfPaByQOM1pGNJ9lTIzf0V+LKFX4COZzn3kbA44B7fspKQ8RuMRVtizhPqThMTevUsVvZvNByJIiIo++xppneeAHuD/D+uOEHC3Q4JMQD0iFQh1YEWk2xBZhoybaa2y6p5iP7aLWvaW+k1qyejhbrMvCATTbbqTg5n6N8fb6KhWTrkXAR2SKwiefZFR7lUsT0knqz3JoSflm8YcxxC7s8oaaEUyJLRr/4ESZwjwVYsJVuifP0S77lNOZKgEeJ/yhuHCJZQiksjd4syTznmN4BA1dUZEG/RdVff/lR5PN5BXUZNGWlEbMMh/JSipSy2NGJwR+OrN8mv0mNt1rbObiMdZ1SB6ihjWQR65rpUF0baQNCPVPTXKNSxk0wnShF7fRfpZwPK+Yo1R3bQ2V1inPwWlX4eykm2ZZbQYJUQ+4Z4/NA088EzZDQat5nHmR+pSyz4cm2OnelduYOT7xEXr68fT1QLtjD7CgLHtF3jzA6h7g/5mEQc6/uPHJPxefKZoXyW87f72c0PRqEsBvA9oo3srsNw4VGCV+fwehMqjsW9EFDfzPR2pyBZTkuMSgdDUdg6DWj28BoxfYhDO4FYSVtyuwyu1aNJG3SOsDmTgDYsLyDAZ5udrkwW60um/sYpva4AG4j1NBm0rYa3jZnvgfF3NGF3YiSbEr51OKmF5Y70Ecjd4QPESxu2geH6H1jQKzR0LwY1Iq7AWUXTNFCwi95nsgXpATSUfjfsqn39bB+TYVGIIRsMof3Xo630/QbkgWp9D95LErqH0GofA04PoXLdcodYFtL36jnasL7oJAHq7wuDCcQi8YtAEN/wvGt0PL22MHKW76JanpIttM6+U0E/YuBRc12N6FWm5tswHTDfPeXhj2LIeksq7bbw77aTlpLpLPdH6HWmkyq94AdF5VzkaKfnRTj9UgxT74cFbXY+RA8BuwH6lbpFeKUliVjgh3Qqk9PAgUnFAyi+FTJ/w6I73pnrYgFIKUMb8EYUJHRTzXoasNoQikV/GuBZPfqRuPCYSW/K71pT6qd+nmfsOCNyGBgdtxyrfoTtg3QC3jffYc6uACStnra2aYO27e+Z2ujqqhzWxF7tqCzZt3eh07LurUTvZT16T1m1wO8BcU77R4P/wN5bvQfzx4AAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=2d797d0fc348221089cf1c377d013171^sys_idNOT INbf23b084c3d4221089cf1c377d01311d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>59ff2248-b58d-45e0-a801-683266d294ec</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>bf23b084c3d4221089cf1c377d01311d</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 10:11:53</sys_updated_on>
+        <ui_id>347d1ce9-1906-4855-b53a-08be5fbb9693</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=2d797d0fc348221089cf1c377d013171^sys_idNOT IN44daa488c394221089cf1c377d0131f4"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Add a Pause">a055540f534e2010c232ddeeff7b12db</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/42SS2vjMBSF/4vWjlH8SDvZDQyFgZkW2mk3pZgr6SoRyJIry2kzJf99rvxIId3Mzvp0H+cc+fmDGcW2bCPruq64rssKC77msigLpRC1vhLrQkmWMQctUmWP0jvVEziAHRIpq6zgnIAyfWfh+HTJ5d5YFdCx7fNLxjoINCliYNuPi6t47LCxINBS+0MMxu2o/X8FLo2fCr9ITgsSWEb7oJKOdcbwPaJTSKs02B4z1oJTEH04nklAUHfOfoK9cZGmsVT83pu/NPqac54qNZIpidPt+djMCU1Y7r2ReNdF491EIgg790hvh9bdTgZStqhhsHHJlsjQ0zzskuokY9akH/b+7X5ZeGPcaHC+tF6CPZ8gUgxiiNinlxjMn4twJvLr8jnQYksbmxa6jkjTBX8w4xYS3eY7S4dcW/9G6nqzcznI5DCnNCG/If5jxE8QTLL7m8ZQc1r36MzrgD/H595UXAixWa3lBlaVqMvVtyter8pKCi05KhAlO43RNq9DMjWFNMfRTIlSQS+D6eJ3knDAs/MJJtfLr5E+v1aeTqeXf3LDRLkiAwAA</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:12:44</sys_created_on>
+        <sys_id>44daa488c394221089cf1c377d0131f4</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:28</sys_updated_on>
+        <ui_id>64558c2e-7849-4fb8-8539-2ebaf13ad900</ui_id>
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=2d797d0fc348221089cf1c377d013171^sys_idNOT IN7723b084c3d4221089cf1c377d01311f,7f23b084c3d4221089cf1c377d01311a"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3323b084c3d4221089cf1c377d01311f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>59ff2248-b58d-45e0-a801-683266d294ec</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>7723b084c3d4221089cf1c377d01311f</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:36</sys_updated_on>
+        <ui_id>fd9ceb6f-85c5-4f71-80b2-b9cf4a589f9e</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b323b084c3d4221089cf1c377d01311a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:18</sys_created_on>
+        <sys_id>7f23b084c3d4221089cf1c377d01311a</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:35</sys_updated_on>
+        <ui_id>59ff2248-b58d-45e0-a801-683266d294ec</ui_id>
+        <values>H4sIAAAAAAAA/+2UTW/bMAyG/0rgs2f4ownW3IoMBQpsK7AWvWyFQUt0IlSWPElOmgX576MsOw3aBPvAjrtZL0XyJfXAu0h3ru2cvddX1oqliuZfH+NIKK/R9y5S0GA0j5hWXDihVdkLcbQG2fnAYoXsaWIduM5OSOfCthK2D2fCbCUkNzj0acFQNYcmmu9ehdy2xVJChZKq3Dkj1JLSBadTnUKdXbKMFfmsyNM0f3+RVbOiynJeAEJB98bExWh78rFX4rPz+H6k27GTNtzbytI4wmeHiiO1rkFajKMGFAenzfagGAR+q+SLsBLKUbnIX3624gfVzqdTf7FGmpFhCB6O5bC3ILOVFgxvW28wKA4qOeQwLbtGfQ5z+I1jDZ1048ZJ6SzVw9ab9i4GS/XdSm++jA2vheoHHIJSM5CHEzhaQ9U5tP5hUGJDhcoG2paWU7ZGr0WfTF6aZCnpkNRSb6ipZygB5o0ntCNIrkn/0MsPYISf4hOVoeRgswIrWNnzRuWcoRH2/VrK7503FAYcRinDNuiCZUa07or6rHFwvY/fwnrE6W63oEdyyMssYZ2hHbgkYLnff+vStOA9qsjf3ai3GP9h9r+g/BKm9TRLp6cpv5idovwE3+fRzn+Btn+M3yQ7TdP/aB+jLWwZEB1m65v/NdmPHuPQwQZuODJhyci9127Gv7UPbAkAwY6ljTZPfoQXbf8TMBQW5vcFAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=2d797d0fc348221089cf1c377d013171^sys_idNOT IN0dade48cc394221089cf1c377d0131d8,26c72444c394221089cf1c377d013194,38656d50c394221089cf1c377d01310e,38ebecc8c394221089cf1c377d0131e3,3b23b084c3d4221089cf1c377d013124,4033b084c3d4221089cf1c377d013125,49ade48cc394221089cf1c377d0131d8,7723b084c3d4221089cf1c377d013124,8c33b084c3d4221089cf1c377d013124,b323b084c3d4221089cf1c377d013124,c833b084c3d4221089cf1c377d013124,cdade48cc394221089cf1c377d0131d8,f8ebecc8c394221089cf1c377d0131e3,fb23b084c3d4221089cf1c377d013123"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:06</sys_created_on>
+        <sys_id>0dade48cc394221089cf1c377d0131d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:06</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>af22c480-a263-4aa7-a041-92740cf3de2f</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:32</sys_created_on>
+        <sys_id>26c72444c394221089cf1c377d013194</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 09:59:32</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>76d6e8f0-13ec-4f2c-b68f-c5f533caf353</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 09:07:08</sys_created_on>
+        <sys_id>38656d50c394221089cf1c377d01310e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 09:07:08</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e59653bd-db80-490c-b4fd-b8f0c3698f79</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:17:25</sys_created_on>
+        <sys_id>38ebecc8c394221089cf1c377d0131e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:17:25</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>30a48850-de1b-4431-a063-1efee707e9fe</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>3b23b084c3d4221089cf1c377d013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>93d46660-f84b-40cc-b10e-2c9360693e7e</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>4033b084c3d4221089cf1c377d013125</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>59f2db2a-68d7-44f1-af40-b880f207ff11</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:06</sys_created_on>
+        <sys_id>49ade48cc394221089cf1c377d0131d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:06</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>0a1de18b-044e-4fa4-a5f1-37b8f6b8809c</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>7723b084c3d4221089cf1c377d013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>02ed9185-8ed6-488b-bfc0-fe69e415bd72</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>8c33b084c3d4221089cf1c377d013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>128d4490-6507-45d5-b597-499e611d19e5</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>b323b084c3d4221089cf1c377d013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>019fdc4d-97a0-4a14-91e4-42a29dcb58cd</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>c833b084c3d4221089cf1c377d013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>1dd7d543-4631-4180-8346-ca3fec8ad674</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:06</sys_created_on>
+        <sys_id>cdade48cc394221089cf1c377d0131d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:06</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>b193dd93-21d4-4ea0-bb75-d40e05963a72</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:17:25</sys_created_on>
+        <sys_id>f8ebecc8c394221089cf1c377d0131e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:17:25</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>2fed561d-67f5-41cc-863e-38708af22429</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2d797d0fc348221089cf1c377d013171</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:19</sys_created_on>
+        <sys_id>fb23b084c3d4221089cf1c377d013123</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:19</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6d9d639e-d517-4908-9485-90e03d53a3c2</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=2d797d0fc348221089cf1c377d013171"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171^sys_idNOT IN45819484c314221089cf1c377d013152,89819484c314221089cf1c377d01314e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 08:22:13</sys_created_on>
+        <sys_id>45819484c314221089cf1c377d013152</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 08:22:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 08:22:12</sys_created_on>
+        <sys_id>89819484c314221089cf1c377d01314e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 08:22:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_2d797d0fc348221089cf1c377d013171"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_2d797d0fc348221089cf1c377d013171"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_2d797d0fc348221089cf1c377d013171"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>checkout_reminder</internal_name>
+        <label_cache>[{"name":"Created_1.current.status","label":"Trigger - Record Created➛Attendance Data Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1596199_attend_attendance_data","column_name":"status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Checked-In","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Checked-In","value":"Checked-In","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}},{"used":false,"label":"Checked-Out","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Checked-Out","value":"Checked-Out","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}},{"used":false,"label":"Not Checked-In","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Not Checked-In","value":"Not Checked-In","parameters":{"name":"x_1596199_attend_attendance_data","dependent_values":[""]}}],"usedInstances":{"734f2434-08b6-4402-aeb1-8e881a7f10e6":["condition"],"59ff2248-b58d-45e0-a801-683266d294ec":["condition"],"64558c2e-7849-4fb8-8539-2ebaf13ad900":["wait_for_completion"]}},{"name":"Created_1.run_start_date_time","label":"Trigger - Record Created➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.employee.last_name","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"last_name","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.current.employee.first_name","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.current.check_in_time","label":"Trigger - Record Created➛Attendance Data Record➛Check In time","reference":"","reference_display":"Check In time","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1596199_attend_attendance_data","column_name":"check_in_time","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null],"347d1ce9-1906-4855-b53a-08be5fbb9693":[null]}},{"name":"Created_1.run_start_time","label":"Trigger - Record Created➛Run Start Time UTC","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.employee","label":"Trigger - Record Created➛Attendance Data Record➛Employee","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1596199_attend_attendance_data","column_name":"employee","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":[null]}},{"name":"Created_1.current.employee.email","label":"Trigger - Record Created➛Attendance Data Record➛Employee➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","usedInstances":{"86bcda35-d64b-4107-bb68-fd14e7d42034":["ah_to"],"862766eb-b6f6-4fcb-8a68-08dedbda154a":["ah_to"],"347d1ce9-1906-4855-b53a-08be5fbb9693":["ah_to"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Attendance Data Record","reference":"x_1596199_attend_attendance_data","reference_display":"Attendance Data","type":"reference","base_type":"reference","usedInstances":{"c06d2c7b-b161-4a23-8be8-247e2aadb6fc":["record"]},"attributes":{}},{"name":"Created_1.table_name","label":"Trigger - Record Created➛Attendance Data Table","reference":"x_1596199_attend_attendance_data","reference_display":"Attendance Data","type":"table_name","base_type":"table_name","usedInstances":{"25be92ee-2278-43d2-9e0c-56f8ae090d00":["task_table"]},"attributes":{"test_input_hidden":"true"}}]</label_cache>
+        <master>true</master>
+        <name>Checkout Reminder</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Checkout Reminder">2d797d0fc348221089cf1c377d013171</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d4d76444c394221089cf1c377d01316c</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:40</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=d4d76444c394221089cf1c377d01316c"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d4d76444c394221089cf1c377d01316c"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=d4d76444c394221089cf1c377d01316c"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=d4d76444c394221089cf1c377d01316c^sys_idNOT IN1cd76444c394221089cf1c377d01316d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>d4d76444c394221089cf1c377d01316c</id>
+        <name>Checkout Reminder</name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:39</sys_created_on>
+        <sys_id>1cd76444c394221089cf1c377d01316d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 09:59:39</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=1cd76444c394221089cf1c377d01316d"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=d4d76444c394221089cf1c377d01316c^sys_idNOT IN90d76444c394221089cf1c377d01316f,a8d76444c394221089cf1c377d01317b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</model>
+        <model_id>d4d76444c394221089cf1c377d01316c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:39</sys_created_on>
+        <sys_id>90d76444c394221089cf1c377d01316f</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:39</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=90d76444c394221089cf1c377d01316f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</model>
+        <model_id>d4d76444c394221089cf1c377d01316c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:40</sys_created_on>
+        <sys_id>a8d76444c394221089cf1c377d01317b</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:39</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a8d76444c394221089cf1c377d01317b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=d4d76444c394221089cf1c377d01316c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d4d76444c394221089cf1c377d01316c"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=d4d76444c394221089cf1c377d01316c^sys_idNOT IN60d76444c394221089cf1c377d013196"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:40</sys_created_on>
+        <sys_id>60d76444c394221089cf1c377d013196</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VY227bOBD9FUFPu4AX0MWXKG+pnWIDdBvAcXcf0kCgpKEtlKa8EqXEW+Tfd6ibZV0c39IkLy1MUpwzh2fOkLn/qTLiAFMv1RlxGKg91ecCQk7YbL0CHBZy2OZkKeeWhHtEBOFavRRhDD01CD0I1Uu9pyaExXC3jm48/AiXpl/kn6v5NP5+svWBNdQtyyZCAPfy/wh3wcatCS71/GjFyPrv/IurcoEyyRa4C595IXD18v6hp65IiKGEhPGzNuVLLC51iWWA5pq6aRiaZlz0dWdoOrrhmQQ0DTesU1DDLlqY2CQOTxIfYChKWAQtJIVAvFvO1uWKBXKcsbQkT5H/H+5+ocl1FBC7C9lc+dPOGcmG3UXgu3C7En7As5EMZzYZsHjJv2b4JZdAScxEwSWOxBHuBysJWYLIEdG7RfA4LQJ+9nmaXT7JApew8hceWOg7sYBIEk59htTbGTdREIcp+un1+HY6sf+5mo3/vJ7a0+u72fRmPLueqM9pXva/sdwxQ5hjsbN0nksBfPaByQOM1pGNJ9lTIzf0V+LKFX4COZzn3kbA44B7fspKQ8RuMRVtizhPqThMTevUsVvZvNByJIiIo++xppneeAHuD/D+uOEHC3Q4JMQD0iFQh1YEWk2xBZhoybaa2y6p5iP7aLWvaW+k1qyejhbrMvCATTbbqTg5n6N8fb6KhWTrkXAR2SKwiefZFR7lUsT0knqz3JoSflm8YcxxC7s8oaaEUyJLRr/4ESZwjwVYsJVuifP0S77lNOZKgEeJ/yhuHCJZQiksjd4syTznmN4BA1dUZEG/RdVff/lR5PN5BXUZNGWlEbMMh/JSipSy2NGJwR+OrN8mv0mNt1rbObiMdZ1SB6ihjWQR65rpUF0baQNCPVPTXKNSxk0wnShF7fRfpZwPK+Yo1R3bQ2V1inPwWlX4eykm2ZZbQYJUQ+4Z4/NA088EzZDQat5nHmR+pSyz4cm2OnelduYOT7xEXr68fT1QLtjD7CgLHtF3jzA6h7g/5mEQc6/uPHJPxefKZoXyW87f72c0PRqEsBvA9oo3srsNw4VGCV+fwehMqjsW9EFDfzPR2pyBZTkuMSgdDUdg6DWj28BoxfYhDO4FYSVtyuwyu1aNJG3SOsDmTgDYsLyDAZ5udrkwW60um/sYpva4AG4j1NBm0rYa3jZnvgfF3NGF3YiSbEr51OKmF5Y70Ecjd4QPESxu2geH6H1jQKzR0LwY1Iq7AWUXTNFCwi95nsgXpATSUfjfsqn39bB+TYVGIIRsMof3Xo630/QbkgWp9D95LErqH0GofA04PoXLdcodYFtL36jnasL7oJAHq7wuDCcQi8YtAEN/wvGt0PL22MHKW76JanpIttM6+U0E/YuBRc12N6FWm5tswHTDfPeXhj2LIeksq7bbw77aTlpLpLPdH6HWmkyq94AdF5VzkaKfnRTj9UgxT74cFbXY+RA8BuwH6lbpFeKUliVjgh3Qqk9PAgUnFAyi+FTJ/w6I73pnrYgFIKUMb8EYUJHRTzXoasNoQikV/GuBZPfqRuPCYSW/K71pT6qd+nmfsOCNyGBgdtxyrfoTtg3QC3jffYc6uACStnra2aYO27e+Z2ujqqhzWxF7tqCzZt3eh07LurUTvZT16T1m1wO8BcU77R4P/wN5bvQfzx4AAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=d4d76444c394221089cf1c377d01316c^sys_idNOT IN6233f084c3d4221089cf1c377d0131b3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>59ff2248-b58d-45e0-a801-683266d294ec</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>6233f084c3d4221089cf1c377d0131b3</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 09:10:49</sys_updated_on>
+        <ui_id>347d1ce9-1906-4855-b53a-08be5fbb9693</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=d4d76444c394221089cf1c377d01316c^sys_idNOT IN8eda2888c394221089cf1c377d01311a"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Add a Pause">a055540f534e2010c232ddeeff7b12db</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/42Sy27bMBBF/4VrWaD1cFrvggQBCiQN0LTZBIEwIoc2AYpSSMqJa/jfO7Qeae1Nd5zDedy55MuBacnWbCXKsiy4KvMCM77kIsszKRGVuqqXmRQsYRYapEyPorXSE9iB6SPJiyTjnIDUvjOwfz7nYquNdGjZ+uU1YR046hTQsfXh7Op/pRio0fyj5UJc2HcnEJy2mzG+H8ueJtg6GWUsE4YfAa1Emq/AeExYA1ZCaN1+Jg5BPlrzCbbaBurGYvKH179p3hfOecxUSDsJHG7nsBoNGrC6hQAkpRehd2Oq2LZaoB/ckKigN+HmbzYkPHZBt3YoCVCbqbo1fWO/D1awucH0HkR6TyKwi6tG7eMi6mnbvv+YVN5pe3JlvDStADNHEMi7ug9Rz4H1+ueZzQO5MBoNNjSxaqDriFSda3f6NIVEN+nGUJAq076TOq83NgURN0zpCSC9I357ws/gdFz3gdpQcRz3y+q3Hr+dPs6q4HVdrxZLsYJFUZf54usVLxd5IWolOEqoc3ZMmN/7GwPefxpFL1S99XHNwbbRoGrwOJYIp7twTaJ2OHsxwOjD9O3i8TLzeDy+/gE1csvqaAMAAA==</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:12:52</sys_created_on>
+        <sys_id>8eda2888c394221089cf1c377d01311a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:39</sys_updated_on>
+        <ui_id>64558c2e-7849-4fb8-8539-2ebaf13ad900</ui_id>
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=d4d76444c394221089cf1c377d01316c^sys_idNOT IN2633f084c3d4221089cf1c377d0131b5,ee33f084c3d4221089cf1c377d0131b3"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3323b084c3d4221089cf1c377d01311f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>59ff2248-b58d-45e0-a801-683266d294ec</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>2633f084c3d4221089cf1c377d0131b5</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:40</sys_updated_on>
+        <ui_id>fd9ceb6f-85c5-4f71-80b2-b9cf4a589f9e</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b323b084c3d4221089cf1c377d01311a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Checkout Reminder">d4d76444c394221089cf1c377d01316c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>ee33f084c3d4221089cf1c377d0131b3</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:40</sys_updated_on>
+        <ui_id>59ff2248-b58d-45e0-a801-683266d294ec</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnVdAjNhrfAgcBAqQN0AS5tIGwIimbCEWqfNhxBf97l3rYRuOgNdpjb+Isd3d2uAO1RHvXeGcf9ZW1YqnI/OtzRIQKGH63REHNyZxQrZhwQquiAyKyBulDYLHi9GViHThvJ4gzYRsJ26d3wnQlJDN86NOAwWqOGzJvfwkJhtlVAlV6SVOaZ7M8S5Ls40VazvIyzVgOHHIsKKHkMjQaCU7uOiR6l7nbNgG3zgi1HM53Q5WHEdSGBVZpEhH+6rhiHPlUIC2PSA2KgdNmu0cMB3av5AFYCeWwHAmXX634gQ2z6TRcrDiOSHkf3B+LQbYerq7BAVLx1HkzXKUrLSi3vTiMV+ClWxxj/YX7Jozapzgo5Zitpa/V514Rsi8wvhIi3iIJ3oRJA/VhjuphpTdfRpY3QnWqDEGpKcj9CRxqV3oX+LSES15joaKGpkFFi8boteiSkUsdLyUe4krqDTYNexcDDcRjFBbiG8SvO/gJjAhTfMIymNzTLMEKWnQ7iuVQJk52EbFbu5Bg7WFIVLf47gPFfuRhuKLXJ6RQIxp3hZ3XfJhjF71d+aNtb9sFvrXjrEhj6g2q4uJ+uXe7bz5JctYtPGcfbtVbM5yZfZ5XLmFaTdNketorF7NTXjnhkjMNkv3GIOF1/tAfSZL8N8hfG0TYol/rYbau+T/0x3MwQ99zrzUVFqk9Bux2/HOEwBaXS9BjaKPNSxjqgO1+AodWLsKDBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=d4d76444c394221089cf1c377d01316c^sys_idNOT IN27ad688cc394221089cf1c377d013103,2bad688cc394221089cf1c377d013103,6eeb200cc394221089cf1c377d0131f8,6fad688cc394221089cf1c377d013103,7233f084c3d4221089cf1c377d0131e9,7633f084c3d4221089cf1c377d0131e9,7a33f084c3d4221089cf1c377d0131cf,8c75ad50c394221089cf1c377d0131e4,aaeb200cc394221089cf1c377d0131f8,acd76444c394221089cf1c377d0131a2,b633f084c3d4221089cf1c377d0131cf,be33f084c3d4221089cf1c377d0131e8,f233f084c3d4221089cf1c377d0131cf,fa33f084c3d4221089cf1c377d0131e8"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:15</sys_created_on>
+        <sys_id>27ad688cc394221089cf1c377d013103</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:15</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>af22c480-a263-4aa7-a041-92740cf3de2f</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:15</sys_created_on>
+        <sys_id>2bad688cc394221089cf1c377d013103</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:15</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>0a1de18b-044e-4fa4-a5f1-37b8f6b8809c</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:17:32</sys_created_on>
+        <sys_id>6eeb200cc394221089cf1c377d0131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:17:32</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>30a48850-de1b-4431-a063-1efee707e9fe</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:25:15</sys_created_on>
+        <sys_id>6fad688cc394221089cf1c377d013103</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:25:15</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>b193dd93-21d4-4ea0-bb75-d40e05963a72</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>7233f084c3d4221089cf1c377d0131e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6d9d639e-d517-4908-9485-90e03d53a3c2</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>7633f084c3d4221089cf1c377d0131e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>019fdc4d-97a0-4a14-91e4-42a29dcb58cd</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>7a33f084c3d4221089cf1c377d0131cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>02ed9185-8ed6-488b-bfc0-fe69e415bd72</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 09:07:21</sys_created_on>
+        <sys_id>8c75ad50c394221089cf1c377d0131e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 09:07:21</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e59653bd-db80-490c-b4fd-b8f0c3698f79</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:17:32</sys_created_on>
+        <sys_id>aaeb200cc394221089cf1c377d0131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:17:32</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>2fed561d-67f5-41cc-863e-38708af22429</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:40</sys_created_on>
+        <sys_id>acd76444c394221089cf1c377d0131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 09:59:40</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>76d6e8f0-13ec-4f2c-b68f-c5f533caf353</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.last_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>b633f084c3d4221089cf1c377d0131cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>1dd7d543-4631-4180-8346-ca3fec8ad674</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.run_start_date_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>be33f084c3d4221089cf1c377d0131e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>59f2db2a-68d7-44f1-af40-b880f207ff11</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.employee.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>f233f084c3d4221089cf1c377d0131cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>93d46660-f84b-40cc-b10e-2c9360693e7e</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>d4d76444c394221089cf1c377d01316c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Created_1.current.check_in_time}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 10:49:30</sys_created_on>
+        <sys_id>fa33f084c3d4221089cf1c377d0131e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 10:49:30</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>128d4490-6507-45d5-b597-499e611d19e5</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=d4d76444c394221089cf1c377d01316c"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c^sys_idNOT INa0d76444c394221089cf1c377d013179,a4d76444c394221089cf1c377d01318c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:40</sys_created_on>
+        <sys_id>a0d76444c394221089cf1c377d013179</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 09:59:40</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:40</sys_created_on>
+        <sys_id>a4d76444c394221089cf1c377d01318c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 09:59:40</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_d4d76444c394221089cf1c377d01316c"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_d4d76444c394221089cf1c377d01316c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_d4d76444c394221089cf1c377d01316c"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>2d797d0fc348221089cf1c377d013171</sys_id>
+        <latest_snapshot>d4d76444c394221089cf1c377d01316c</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch4a-12-16-2024_01-07-2025_0947.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=2d797d0fc348221089cf1c377d013171^sys_idNOT INb8d76444c394221089cf1c377d0131c0"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"b8d76444c394221089cf1c377d0131c0","name":"plan","plan_signature":null}}</plan>
+        <plan_id>2d797d0fc348221089cf1c377d013171</plan_id>
+        <snapshot>7067444dc394221089cf1c377d01314c</snapshot>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 09:59:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b8d76444c394221089cf1c377d0131c0</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 08:12:41</sys_updated_on>
+        <trigger display_value="">4f33f084c3d4221089cf1c377d0131fe</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=2d797d0fc348221089cf1c377d013171"/>
+</record_update>

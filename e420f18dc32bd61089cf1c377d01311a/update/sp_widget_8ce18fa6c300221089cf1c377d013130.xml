@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $element, spUtil) {
+    $scope.labels = $scope.data.labels;
+    $scope.attendanceData = $scope.data.attendanceData;
+    $scope.employeeIDs = $scope.data.employeeIDs;
+    $scope.selectedEmployee = null;
+    $scope.attendanceRecords = [];
+    var ga = new GlideAjax("AttendanceDataAjax");
+    ga.addParam("sysparm_name", "getAttendanceSummary");
+    ga.getXMLAnswer(function(response) {
+        var data = JSON.parse(response);
+        $scope.$apply(function() {
+            $scope.chart.data.labels = data.labels;
+            $scope.chart.data.datasets[0].data = data.values;
+            $scope.chart.update();
+        });
+
+    }, 500);
+
+    function loadChartJs(callback) {
+        if (typeof Chart !== 'undefined') {
+            callback();
+            return;
+        }
+
+        var script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js';
+        script.onload = callback;
+        document.head.appendChild(script);
+    }
+
+    loadChartJs(function() {
+        var canvas = $element.find("canvas")[0];
+        var ctx = canvas.getContext("2d");
+
+        var chartConfig = {
+            type: 'pie',
+            data: {
+                labels: $scope.labels,
+                datasets: [{
+                    data: $scope.attendanceData,
+                    backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return $scope.data.labels[tooltipItem.dataIndex]; // Show Employee Name + Percentage
+                            }
+                        }
+                    }
+                },
+                // onClick: function(_, elements) {
+                //     if (elements.length > 0) {
+                //         var index = elements[0].index;
+                //         var selectedEmp = $scope.employeeIDs[index];
+
+                //         // Send selected employee to the new widget
+                //         spUtil.update($scope, {
+                //             selectedEmployee: selectedEmp
+                //         });
+                //     }
+                // }
+
+
+            }
+        };
+
+        $scope.chart = new Chart(ctx, chartConfig);
+    });
+
+    // function refreshEmployeeRecords(employeeName) {
+    //     spUtil.update($scope, {
+    //         selectedEmployee: employeeName
+    //     }); // Refresh server script
+    // }
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.attendance-chart-container {&#13;
+    width: 100%;&#13;
+    max-width: 500px;&#13;
+    margin: 0 auto;&#13;
+}&#13;
+&#13;
+table {&#13;
+    width: 100%;&#13;
+    margin-top: 20px;&#13;
+    border-collapse: collapse;&#13;
+}&#13;
+&#13;
+th, td {&#13;
+    padding: 10px;&#13;
+    border: 1px solid #ddd;&#13;
+    text-align: center;&#13;
+}&#13;
+&#13;
+th {&#13;
+    background-color: #a9c52f;&#13;
+    color: white;&#13;
+    padding: 12px;&#13;
+}&#13;
+.sp-page-root {&#13;
+    min-height: 100vh !important; /* Ensure page expands */&#13;
+    overflow: auto !important; /* Enable scrolling if needed */&#13;
+}&#13;
+&#13;
+.attendance-chart-container {&#13;
+    width: 100%;&#13;
+    max-width: 500px;&#13;
+    margin: 0 auto;&#13;
+}&#13;
+&#13;
+table {&#13;
+    width: 100%;&#13;
+    margin-top: 20px;&#13;
+    border-collapse: collapse;&#13;
+}&#13;
+&#13;
+th, td {&#13;
+    padding: 10px;&#13;
+    border: 1px solid #ddd;&#13;
+    text-align: center;&#13;
+}&#13;
+&#13;
+/* Ensure the table is visible and not cut off */&#13;
+.attendance-records {&#13;
+    max-height: 500px; /* Adjust if needed */&#13;
+    overflow-y: auto;  /* Enable scrolling for large data */&#13;
+    display: block;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>piechart</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Attendance_piechart_employee</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var totalRecords = 0;
+    var employeeAttendance = {};
+    data.attendanceRecords = []; // Always initialize to avoid undefined errors
+
+  
+
+    var gr = new GlideAggregate('x_1596199_attend_attendance_data');
+    gr.addAggregate('COUNT');
+    gr.groupBy('employee');
+    gr.query();
+
+    while (gr.next()) {
+        var employeeName = gr.getDisplayValue('employee');
+        if (!employeeName) continue; 
+
+        var count = parseInt(gr.getAggregate('COUNT'), 10);
+        employeeAttendance[employeeName] = count;
+        totalRecords += count;
+    }
+
+    // Convert data to percentages
+    var attendanceData = [];
+    var attendanceLabels = [];
+    var employeeIDs = [];
+
+    for (var emp in employeeAttendance) {
+        var percentage = ((employeeAttendance[emp] / totalRecords) * 100).toFixed(2);
+        attendanceLabels.push(emp + " (" + percentage + "%)");
+        attendanceData.push(employeeAttendance[emp]);
+        employeeIDs.push(emp);
+    }
+
+    
+    data.labels = attendanceLabels;
+    data.attendanceData = attendanceData;
+    data.employeeIDs = employeeIDs;
+
+
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-06 05:45:51</sys_created_on>
+        <sys_id>8ce18fa6c300221089cf1c377d013130</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>Attendance_piechart_employee</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_8ce18fa6c300221089cf1c377d013130</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-17 07:01:43</sys_updated_on>
+        <template><![CDATA[<div class="attendance-chart-container">
+    <canvas></canvas>
+</div>
+
+
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>8ce18fa6c300221089cf1c377d013130</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-06 05:36:59</sys_created_on>
+        <sys_id>6d554f26c300221089cf1c377d0131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-06 05:36:59</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

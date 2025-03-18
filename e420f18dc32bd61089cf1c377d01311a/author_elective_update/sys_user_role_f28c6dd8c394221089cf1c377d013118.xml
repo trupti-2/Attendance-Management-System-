@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1596199_attend.HR</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>HR</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 09:43:38</sys_created_on>
+        <sys_id>f28c6dd8c394221089cf1c377d013118</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1596199_attend.HR</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_user_role_f28c6dd8c394221089cf1c377d013118</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 09:43:38</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_user_role_f28c6dd8c394221089cf1c377d013118</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><encryption_context/><grantable>true</grantable><includes_roles/><name>x_1596199_attend.HR</name><scoped_admin>false</scoped_admin><suffix>HR</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-11 09:43:38</sys_created_on><sys_id>f28c6dd8c394221089cf1c377d013118</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1596199_attend.HR</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sys_user_role_f28c6dd8c394221089cf1c377d013118</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-11 09:43:38</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>1543223378</payload_hash>
+        <record_name>x_1596199_attend.HR</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 09:43:38</sys_created_on>
+        <sys_id>23bde55cc394221089cf1c377d013138</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19584969f410000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 09:43:38</sys_updated_on>
+        <type>Role</type>
+        <update_guid>27bde55c209422106d14d7a0b6c56937</update_guid>
+        <update_guid_history>27bde55c209422106d14d7a0b6c56937:1543223378</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1596199_attend.HR">a977ab42c350221089cf1c377d013135</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-17 05:04:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>76527d40e95544f192a06eebc69e4941</sys_id>
+        <sys_metadata>f28c6dd8c394221089cf1c377d013118</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1596199_attend.HR</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_user_role_f28c6dd8c394221089cf1c377d013118</sys_update_name>
+        <sys_update_version display_value="sys_user_role_f28c6dd8c394221089cf1c377d013118">23bde55cc394221089cf1c377d013138</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-17 05:04:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

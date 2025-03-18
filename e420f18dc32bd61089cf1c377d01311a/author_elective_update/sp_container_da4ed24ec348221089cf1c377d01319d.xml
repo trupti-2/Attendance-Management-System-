@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>AttendanceLogin - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="attendance_loginn">221e5242c388221089cf1c377d0131b1</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:29:24</sys_created_on>
+        <sys_id>da4ed24ec348221089cf1c377d01319d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AttendanceLogin - Container 2</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_container_da4ed24ec348221089cf1c377d01319d</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:29:27</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_container_da4ed24ec348221089cf1c377d01319d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>AttendanceLogin - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="attendance_loginn">221e5242c388221089cf1c377d0131b1</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-04 13:29:24</sys_created_on><sys_id>da4ed24ec348221089cf1c377d01319d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>AttendanceLogin - Container 2</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sp_container_da4ed24ec348221089cf1c377d01319d</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-04 13:29:27</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-466855850</payload_hash>
+        <record_name>AttendanceLogin - Container 2</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:29:27</sys_created_on>
+        <sys_id>074e1642c388221089cf1c377d01315f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1956158d83f0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:29:27</sys_updated_on>
+        <type>Container</type>
+        <update_guid>cb4e1642c5882210066462971a6ce05e</update_guid>
+        <update_guid_history>cb4e1642c5882210066462971a6ce05e:-466855850,de4ed24e6d482210dc24a721a0e74d9f:545322711</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="AttendanceLogin - Container 2">105e5242c388221089cf1c377d0131d5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:29:32</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>0b8c98013e4a4f78862ea184822a9f44</sys_id>
+        <sys_metadata>da4ed24ec348221089cf1c377d01319d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AttendanceLogin - Container 2</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_container_da4ed24ec348221089cf1c377d01319d</sys_update_name>
+        <sys_update_version display_value="sp_container_da4ed24ec348221089cf1c377d01319d">074e1642c388221089cf1c377d01315f</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:29:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

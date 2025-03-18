@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1596199_attend.CalculateTotal Hours</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>CalculateTotal Hours</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CalculateTotalHours = Class.create();
+CalculateTotalHours.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    calculateHours: function() {
+        var attendanceSysId = this.getParameter('sysparm_sys_id'); // Get the sys_id parameter
+
+        var record = new GlideRecord('x_1596199_attend_attendance_data'); // Ensure this is your table name
+        if (record.get(attendanceSysId)) {
+            if (!record.check_in_time.nil() && !record.check_out_time.nil()) { // Check if both fields have values
+                var checkIn = new GlideDateTime(record.check_in_time);
+                var checkOut = new GlideDateTime(record.check_out_time);
+                var duration = checkOut.getNumericValue() - checkIn.getNumericValue();
+                var totalHours = duration / (1000 * 60 * 60); // Convert milliseconds to hours
+                
+                record.setValue('total_hours', totalHours.toFixed(2)); // Save total hours
+                record.update(); // Update the record
+                
+                return totalHours.toFixed(2); // Return the calculated total hours
+            }
+        }
+        return '0.00'; // Default if check-in or check-out is missing
+    },
+    type: 'CalculateTotalHours'
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 08:16:58</sys_created_on>
+        <sys_id>e5e28403c327121089cf1c377d0131ef</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>CalculateTotal Hours</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_script_include_e5e28403c327121089cf1c377d0131ef</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:09:29</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>e5e28403c327121089cf1c377d0131ef</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 08:16:58</sys_created_on>
+        <sys_id>5bc38843c327121089cf1c377d0131cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 08:16:58</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_script_include_e5e28403c327121089cf1c377d0131ef</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1596199_attend.CalculateTotal Hours&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;CalculateTotal Hours&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var CalculateTotalHours = Class.create();
+CalculateTotalHours.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    calculateHours: function() {
+        var attendanceSysId = this.getParameter('sysparm_sys_id'); // Get the sys_id parameter
+
+        var record = new GlideRecord('x_1596199_attend_attendance_data'); // Ensure this is your table name
+        if (record.get(attendanceSysId)) {
+            if (!record.check_in_time.nil() &amp;&amp; !record.check_out_time.nil()) { // Check if both fields have values
+                var checkIn = new GlideDateTime(record.check_in_time);
+                var checkOut = new GlideDateTime(record.check_out_time);
+                var duration = checkOut.getNumericValue() - checkIn.getNumericValue();
+                var totalHours = duration / (1000 * 60 * 60); // Convert milliseconds to hours
+                
+                record.setValue('total_hours', totalHours.toFixed(2)); // Save total hours
+                record.update(); // Update the record
+                
+                return totalHours.toFixed(2); // Return the calculated total hours
+            }
+        }
+        return '0.00'; // Default if check-in or check-out is missing
+    },
+    type: 'CalculateTotalHours'
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 08:16:58&lt;/sys_created_on&gt;&lt;sys_id&gt;e5e28403c327121089cf1c377d0131ef&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;CalculateTotal Hours&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_e5e28403c327121089cf1c377d0131ef&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 10:09:29&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;e5e28403c327121089cf1c377d0131ef&lt;/id&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 08:16:58&lt;/sys_created_on&gt;&lt;sys_id&gt;5bc38843c327121089cf1c377d0131cd&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 08:16:58&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>701869709</payload_hash>
+        <record_name>CalculateTotal Hours</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 10:09:29</sys_created_on>
+        <sys_id>6f8d94c7c3a7121089cf1c377d0131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194ef55def10000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:09:29</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>a38d94c76aa71210e51994b1b87aa9d3</update_guid>
+        <update_guid_history>a38d94c76aa71210e51994b1b87aa9d3:701869709,a09a50c34ba71210775e77e9f778f6cb:-1631767733,26658847e02712101879b720b1f7c494:591031938,8a154447a627121005045f3d576104d1:2032293683,31344cc3d0271210d39a61af62c98c57:778092601,b7c30cc349271210a89f0342fc7f1bdc:1682701746</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 10:39:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>0285f3e505374600806fc6139e6b6c71</sys_id>
+        <sys_metadata>e5e28403c327121089cf1c377d0131ef</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CalculateTotal Hours</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_script_include_e5e28403c327121089cf1c377d0131ef</sys_update_name>
+        <sys_update_version display_value="sys_script_include_e5e28403c327121089cf1c377d0131ef">6f8d94c7c3a7121089cf1c377d0131d3</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:39:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

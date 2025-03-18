@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="INSERT_OR_UPDATE">
+        <can_read>true</can_read>
+        <can_share>true</can_share>
+        <can_write>true</can_write>
+        <dashboard display_value="Attendance Dashboard">f4f008b9c380221089cf1c377d0131da</dashboard>
+        <group/>
+        <owner>true</owner>
+        <role/>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-03 07:23:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>70f04431c3c0221089cf1c377d013121</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f4f008b9c380221089cf1c377d0131da</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>par_dashboard_permission_70f04431c3c0221089cf1c377d013121</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-03 07:23:30</sys_updated_on>
+        <user display_value="Trupti Bidave">f939fc33c31f121089cf1c377d013158</user>
+    </par_dashboard_permission>
+</record_update>

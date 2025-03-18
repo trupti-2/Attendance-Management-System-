@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-13 06:59:46</sys_created_on>
+        <sys_id>61ee8bfbc36f521089cf1c377d013115</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1596199_attend_attendance_data.snc_internal</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_security_acl display_value="">18ac2dd9c323121089cf1c377d013144</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_61ee8bfbc36f521089cf1c377d013115</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-13 06:59:46</sys_updated_on>
+        <sys_user_role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_security_acl_role_61ee8bfbc36f521089cf1c377d013115</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-02-13 06:59:46</sys_created_on><sys_id>61ee8bfbc36f521089cf1c377d013115</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1596199_attend_attendance_data.snc_internal</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_security_acl display_value="">18ac2dd9c323121089cf1c377d013144</sys_security_acl><sys_update_name>sys_security_acl_role_61ee8bfbc36f521089cf1c377d013115</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-02-13 06:59:46</sys_updated_on><sys_user_role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1007073138</payload_hash>
+        <record_name>x_1596199_attend_attendance_data.snc_internal</record_name>
+        <reverted_from/>
+        <source>3cedb523c303121089cf1c377d013131</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2025-01-18 09:55:56</sys_created_on>
+        <sys_id>a7e1b114c3d4221089cf1c377d0131fd</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>19478d72fe00000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Access Roles</type>
+        <update_guid>67e1b114a2d42210612e2b9d793446fd</update_guid>
+        <update_guid_history>67e1b114a2d42210612e2b9d793446fd:-1007073138</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1596199_attend_attendance_data.snc_internal">23e1b114c3d4221089cf1c377d0131fe</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 10:01:56</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>af7df495f9e24dba8c6a050024053ce4</sys_id>
+        <sys_metadata>61ee8bfbc36f521089cf1c377d013115</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1596199_attend_attendance_data.snc_internal</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_61ee8bfbc36f521089cf1c377d013115</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_61ee8bfbc36f521089cf1c377d013115">a7e1b114c3d4221089cf1c377d0131fd</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 10:01:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

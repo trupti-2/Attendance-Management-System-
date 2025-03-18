@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4a6ce5d9c323121089cf1c377d013166" label="Attendance Data" max_length="40" name="x_1596199_attend_attendance_data" type="collection">
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Checked-In" sequence="0" value="Checked-In"/>
+                <element inactive_on_update="false" label="Checked-Out" sequence="1" value="Checked-Out"/>
+                <element inactive_on_update="false" label="Not Checked-In" sequence="2" value="Not Checked-In"/>
+            </choice>
+        </element>
+        <element label="Check In time" max_length="40" name="check_in_time" type="glide_date_time"/>
+        <element label="Check Out time" max_length="40" name="check_out_time" type="glide_date_time"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Employee" max_length="32" name="employee" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Total Hours" max_length="20" name="total_hours" type="decimal"/>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

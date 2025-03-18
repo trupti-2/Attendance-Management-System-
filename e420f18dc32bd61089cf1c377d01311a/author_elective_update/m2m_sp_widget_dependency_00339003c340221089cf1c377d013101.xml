@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="ReportingIncludes">d1b923de9f0222008252baac757fcfe4</sp_dependency>
+        <sp_widget display_value="Copy of Report">08335ccbc300221089cf1c377d01316d</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 05:55:35</sys_created_on>
+        <sys_id>00339003c340221089cf1c377d013101</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ReportingIncludes.Copy of Report</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_00339003c340221089cf1c377d013101</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-07 05:55:35</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>m2m_sp_widget_dependency_00339003c340221089cf1c377d013101</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="ReportingIncludes">d1b923de9f0222008252baac757fcfe4</sp_dependency><sp_widget display_value="Copy of Report">08335ccbc300221089cf1c377d01316d</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-07 05:55:35</sys_created_on><sys_id>00339003c340221089cf1c377d013101</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ReportingIncludes.Copy of Report</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>m2m_sp_widget_dependency_00339003c340221089cf1c377d013101</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-07 05:55:35</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>-1190711767</payload_hash>
+        <record_name>ReportingIncludes.Copy of Report</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 05:55:35</sys_created_on>
+        <sys_id>cc339003c340221089cf1c377d013103</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1956f2c67870000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-07 05:55:35</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>c0339003c1402210dbf234e535176e03</update_guid>
+        <update_guid_history>c0339003c1402210dbf234e535176e03:-1190711767</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ReportingIncludes.Copy of Report">188af800c318221089cf1c377d0131d5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 11:21:17</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>7eaa710a326547409872cc20bded1000</sys_id>
+        <sys_metadata>00339003c340221089cf1c377d013101</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ReportingIncludes.Copy of Report</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_00339003c340221089cf1c377d013101</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_00339003c340221089cf1c377d013101">cc339003c340221089cf1c377d013103</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 11:21:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

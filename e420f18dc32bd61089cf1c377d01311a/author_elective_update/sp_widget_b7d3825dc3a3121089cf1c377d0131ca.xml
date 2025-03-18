@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function checkIn() {
+    var now = new Date(); // Get current date and time
+    var checkInTime = now.toISOString(); // Convert to ISO format
+
+    var requestBody = {
+        checkInTime: checkInTime
+    };
+
+    // Call the server-side Script Include
+    $http.post('/api/now/table/x_1596199_attend_attendance_data', requestBody).then(function(response) {
+        if (response.data.result) {
+            alert("Check-in successful at " + now);
+            data.lastCheckIn = now.toLocaleString(); // Update UI instantly
+            data.status = "Checked-In"; // Update status
+        } else {
+            alert("Check-in failed. Please try again.");
+        }
+    }, function(error) {
+        Console.log(error);
+        alert("Error while checking in.");
+    });
+};
+function checkIn() {
+    var ga = new GlideAjax('AttendanceActions');
+    ga.addParam('sysparm_name', 'checkIn'); // Call server function
+    ga.getXMLAnswer(function(response) {
+        var result = JSON.parse(response);
+        if (result.success) {
+            alert("Check-in successful at " + result.checkInTime);
+            data.lastCheckIn = result.checkInTime;
+            data.status = "Checked-In";
+        } else {
+            alert("Check-in failed.");
+        }
+    });
+}
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.text-center {&#13;
+    text-align: center;&#13;
+    background-color: #f4f4f4; /* Light grey background */&#13;
+    padding: 20px;&#13;
+    border-radius: 10px;&#13;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);&#13;
+    max-width: 800px;&#13;
+    height: 450px;&#13;
+    margin: 20px auto;&#13;
+    &#13;
+}&#13;
+&#13;
+/* Styling for the header */&#13;
+.text-center h2 {&#13;
+    font-size: 40px;&#13;
+    color: #333;&#13;
+    margin-bottom: 15px;&#13;
+}&#13;
+&#13;
+/* Styling for Employee details and Status */&#13;
+.text-center p {&#13;
+    font-size: 16px;&#13;
+    color: #444;&#13;
+    margin: 8px 0;&#13;
+}&#13;
+&#13;
+/* Highlight Employee Name */&#13;
+.text-center p strong {&#13;
+    color: #222;&#13;
+}&#13;
+&#13;
+/* Button Styling */&#13;
+.text-center .btn {&#13;
+    display: block;&#13;
+    width: 200px;&#13;
+    padding: 12px;&#13;
+    margin: 10px auto;&#13;
+    font-size: 16px;&#13;
+    font-weight: bold;&#13;
+    border: none;&#13;
+    border-radius: 6px;&#13;
+    cursor: pointer;&#13;
+    transition: all 0.3s ease-in-out;&#13;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn-success {&#13;
+    background-color: #0a0944;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.text-center .btn-success:hover {&#13;
+    background-color: #58727f;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn-danger {&#13;
+    background-color: #0a0944;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.text-center .btn-danger:hover {&#13;
+    background-color: #58727f;&#13;
+}&#13;
+&#13;
+/* Disabled Button */&#13;
+.text-center .btn:disabled {&#13;
+    background-color: #aaa;&#13;
+    cursor: not-allowed;&#13;
+    box-shadow: none;&#13;
+}&#13;
+.button-container{&#13;
+        display:flex;&#13;
+        justify-content: center;&#13;
+        gap: 8px; &#13;
+        margin-top: 15px;&#13;
+       &#13;
+}&#13;
+.text-center .btn-info{&#13;
+           margin-top:35px;&#13;
+           background-color: #0a0944;&#13;
+           color: white;&#13;
+          &#13;
+}&#13;
+.text-center .btn-info:hover {&#13;
+    background-color: #58727f;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>check_in_out</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Check In Check Out Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.userId = gs.getUserID();
+    data.userName = gs.getUserDisplayName(); // Fetch the full name of the logged-in user
+
+    var attendanceRecord = new GlideRecord('x_1596199_attend_attendance_data');
+    attendanceRecord.addQuery('employee', gs.getUserID());
+    attendanceRecord.orderByDesc('sys_created_on');
+    attendanceRecord.query();
+
+    if (attendanceRecord.next()) {
+        data.lastCheckIn = attendanceRecord.getValue('check_in_time');
+        data.lastCheckOut = attendanceRecord.getValue('check_out_time');
+        data.status = attendanceRecord.getValue('status');
+    } else {
+        data.lastCheckIn = null;
+        data.lastCheckOut = null;
+        data.status = "Not Checked-in";
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 08:01:32</sys_created_on>
+        <sys_id>b7d3825dc3a3121089cf1c377d0131ca</sys_id>
+        <sys_mod_count>73</sys_mod_count>
+        <sys_name>Check In Check Out Widget</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_b7d3825dc3a3121089cf1c377d0131ca</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 11:36:49</sys_updated_on>
+        <template><![CDATA[ <div class="text-center" >
+    <h2>Attendance Page</h2>
+   
+    <p><strong>Employee:</strong> {{ data.userName }}</p>
+    <p><strong>Last Check-in:</strong> {{ data.lastCheckIn  ||  "No Check-in yet" }}</p>
+    <p><strong>Last Check-out:</strong> {{ data.lastCheckOut || "No Check-out yet" }}</p>
+    <p><strong>Status:</strong> {{ data.status }}</p>
+    
+   <div class="button-container">
+      <button class="btn btn-success" ng-click="checkIn()">Check-In</button>
+      <button class="btn btn-danger" ng-click="checkOut()">Check-Out</button>
+   </div>
+    
+    <a href="?id=attendance_history_page" class="btn btn-info">View Attendance History</a>
+</div>
+   
+
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>b7d3825dc3a3121089cf1c377d0131ca</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 08:01:31</sys_created_on>
+        <sys_id>08509651c3e3121089cf1c377d0131c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 08:01:31</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_widget_b7d3825dc3a3121089cf1c377d0131ca</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function checkIn() {
+    var now = new Date(); // Get current date and time
+    var checkInTime = now.toISOString(); // Convert to ISO format
+
+    var requestBody = {
+        checkInTime: checkInTime
+    };
+
+    // Call the server-side Script Include
+    $http.post('/api/now/table/x_1596199_attend_attendance_data', requestBody).then(function(response) {
+        if (response.data.result) {
+            alert("Check-in successful at " + now);
+            data.lastCheckIn = now.toLocaleString(); // Update UI instantly
+            data.status = "Checked-In"; // Update status
+        } else {
+            alert("Check-in failed. Please try again.");
+        }
+    }, function(error) {
+        Console.log(error);
+        alert("Error while checking in.");
+    });
+};
+function checkIn() {
+    var ga = new GlideAjax('AttendanceActions');
+    ga.addParam('sysparm_name', 'checkIn'); // Call server function
+    ga.getXMLAnswer(function(response) {
+        var result = JSON.parse(response);
+        if (result.success) {
+            alert("Check-in successful at " + result.checkInTime);
+            data.lastCheckIn = result.checkInTime;
+            data.status = "Checked-In";
+        } else {
+            alert("Check-in failed.");
+        }
+    });
+}
+
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.text-center {&amp;#13;
+    text-align: center;&amp;#13;
+    background-color: #f4f4f4; /* Light grey background */&amp;#13;
+    padding: 20px;&amp;#13;
+    border-radius: 10px;&amp;#13;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);&amp;#13;
+    max-width: 800px;&amp;#13;
+    height: 450px;&amp;#13;
+    margin: 20px auto;&amp;#13;
+    &amp;#13;
+}&amp;#13;
+&amp;#13;
+/* Styling for the header */&amp;#13;
+.text-center h2 {&amp;#13;
+    font-size: 40px;&amp;#13;
+    color: #333;&amp;#13;
+    margin-bottom: 15px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+/* Styling for Employee details and Status */&amp;#13;
+.text-center p {&amp;#13;
+    font-size: 16px;&amp;#13;
+    color: #444;&amp;#13;
+    margin: 8px 0;&amp;#13;
+}&amp;#13;
+&amp;#13;
+/* Highlight Employee Name */&amp;#13;
+.text-center p strong {&amp;#13;
+    color: #222;&amp;#13;
+}&amp;#13;
+&amp;#13;
+/* Button Styling */&amp;#13;
+.text-center .btn {&amp;#13;
+    display: block;&amp;#13;
+    width: 200px;&amp;#13;
+    padding: 12px;&amp;#13;
+    margin: 10px auto;&amp;#13;
+    font-size: 16px;&amp;#13;
+    font-weight: bold;&amp;#13;
+    border: none;&amp;#13;
+    border-radius: 6px;&amp;#13;
+    cursor: pointer;&amp;#13;
+    transition: all 0.3s ease-in-out;&amp;#13;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);&amp;#13;
+}&amp;#13;
+&amp;#13;
+&amp;#13;
+.text-center .btn-success {&amp;#13;
+    background-color: #0a0944;&amp;#13;
+    color: white;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.text-center .btn-success:hover {&amp;#13;
+    background-color: #58727f;&amp;#13;
+}&amp;#13;
+&amp;#13;
+&amp;#13;
+.text-center .btn-danger {&amp;#13;
+    background-color: #0a0944;&amp;#13;
+    color: white;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.text-center .btn-danger:hover {&amp;#13;
+    background-color: #58727f;&amp;#13;
+}&amp;#13;
+&amp;#13;
+/* Disabled Button */&amp;#13;
+.text-center .btn:disabled {&amp;#13;
+    background-color: #aaa;&amp;#13;
+    cursor: not-allowed;&amp;#13;
+    box-shadow: none;&amp;#13;
+}&amp;#13;
+.button-container{&amp;#13;
+        display:flex;&amp;#13;
+        justify-content: center;&amp;#13;
+        gap: 8px; &amp;#13;
+        margin-top: 15px;&amp;#13;
+       &amp;#13;
+}&amp;#13;
+.text-center .btn-info{&amp;#13;
+           margin-top:35px;&amp;#13;
+           background-color: #0a0944;&amp;#13;
+           color: white;&amp;#13;
+          &amp;#13;
+}&amp;#13;
+.text-center .btn-info:hover {&amp;#13;
+    background-color: #58727f;&amp;#13;
+}&amp;#13;
+&amp;#13;
+&amp;#13;
+&amp;#13;
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;check_in_out&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;Check In Check Out Widget&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+    data.userId = gs.getUserID();
+    data.userName = gs.getUserDisplayName(); // Fetch the full name of the logged-in user
+
+    var attendanceRecord = new GlideRecord('x_1596199_attend_attendance_data');
+    attendanceRecord.addQuery('employee', gs.getUserID());
+    attendanceRecord.orderByDesc('sys_created_on');
+    attendanceRecord.query();
+
+    if (attendanceRecord.next()) {
+        data.lastCheckIn = attendanceRecord.getValue('check_in_time');
+        data.lastCheckOut = attendanceRecord.getValue('check_out_time');
+        data.status = attendanceRecord.getValue('status');
+    } else {
+        data.lastCheckIn = null;
+        data.lastCheckOut = null;
+        data.status = "Not Checked-in";
+    }
+})();
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-05 08:01:32&lt;/sys_created_on&gt;&lt;sys_id&gt;b7d3825dc3a3121089cf1c377d0131ca&lt;/sys_id&gt;&lt;sys_mod_count&gt;73&lt;/sys_mod_count&gt;&lt;sys_name&gt;Check In Check Out Widget&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_b7d3825dc3a3121089cf1c377d0131ca&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-11 11:36:49&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[ &lt;div class="text-center" &gt;
+    &lt;h2&gt;Attendance Page&lt;/h2&gt;
+   
+    &lt;p&gt;&lt;strong&gt;Employee:&lt;/strong&gt; {{ data.userName }}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Last Check-in:&lt;/strong&gt; {{ data.lastCheckIn  ||  "No Check-in yet" }}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Last Check-out:&lt;/strong&gt; {{ data.lastCheckOut || "No Check-out yet" }}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Status:&lt;/strong&gt; {{ data.status }}&lt;/p&gt;
+    
+   &lt;div class="button-container"&gt;
+      &lt;button class="btn btn-success" ng-click="checkIn()"&gt;Check-In&lt;/button&gt;
+      &lt;button class="btn btn-danger" ng-click="checkOut()"&gt;Check-Out&lt;/button&gt;
+   &lt;/div&gt;
+    
+    &lt;a href="?id=attendance_history_page" class="btn btn-info"&gt;View Attendance History&lt;/a&gt;
+&lt;/div&gt;
+   
+
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;b7d3825dc3a3121089cf1c377d0131ca&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-05 08:01:31&lt;/sys_created_on&gt;&lt;sys_id&gt;08509651c3e3121089cf1c377d0131c9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-05 08:01:31&lt;/sys_updated_on&gt;&lt;table&gt;sp_widget&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>765277066</payload_hash>
+        <record_name>Check In Check Out Widget</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 11:36:49</sys_created_on>
+        <sys_id>902bbd53c363121089cf1c377d013120</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194f4cc2d6b0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 11:36:49</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>582bbd538163121059fb5206f1b0311f</update_guid>
+        <update_guid_history>582bbd538163121059fb5206f1b0311f:765277066,11e9b113b6631210599ed8997ff2b1ab:2086137793,fd23c9cbc86b1210d36f2193063b0469:-1304341301,5bc205cbce6b12108d07954eefce519c:58220663,865005c7a46b12105e34bab920b72cb7:-676987746,c36e7c47076b1210d7a22495e17f1848:1450957453,6e3e78471d6b1210d17fa00794cdea40:342466961,2a4c740f452b121067cf80f388f8a20b:1831342551,e22c70cb9b2b1210dc11ace5630dfdea:-96928114,5938340f372b1210462e024f8fad6702:561580376,b4777c8bb82b12107505ee1968ff177a:1648786634,b147708b612b121025e0503e12596cc2:-844337581,09b6f04b6b2b1210fb16553215cc486d:-1378095228,aa06784721e71210119bb5014b4197e4:19629320,dd40b4437e2b1210ab37447c29cd7c42:-1337542379,0f453fbe48a312100e5d0e7537fdd53e:779240714,e284b37eb7a312100e7376da430503cd:-1115369738,0ab33b3ed6a312106b04d5efca5cf9c7:2088933208,ab9823ba1e63121053163c6c5d0b131e:-1924847707,1858637e9763121061f8ac91919b2a58:-1824125256,0d040cb9a0a71210831f5b84447b4875:1475033078,b4738c79e0a7121032a3082d41e9a59e:599417938,265284b563a7121097c7ccf4c0d6631f:-509960147,926184b5c9a71210a67124ae93d4af28:747076204,3eac3fad626712106a6302eff5951e7b:-814569012,8a9b772dd467121030e32c2813354851:803285091,d079fbe9b56712101a81df7c73add1c7:478972679,fbdc63254d27121094bf8d2a977a4c33:946719168,b07cab69402712107abc2a7635d0e7c2:1923184378,fccf0325ec63121053abd5b59cf75473:-1273979192,785a4fa9df631210745ca434f8df880e:-1658810658,06a99f153aab1210f524a589b174501c:1532416536,c1d81f9164ab1210d0fa961525958c9e:2096597336,6f9897d1e5ab1210dec2eb7a36668736:-363755175,e5285b9143ab1210563093ffa0c8a48e:-764215856,bd081b9194ab12104d0ca46e0a1fe9b5:-1226431185,94d753594d6b121078645def0721d7a1:-1407364150,07019719db6b1210ed0e2b8e0d7cd1c1:-89289330,60e09719d76b1210372d57636f3b04bc:534109686,02a943ddec2b1210f88bc9f8922e0625:-933919124,9289cb9d4e2b1210e4eeb259bcb8c430:-324001330,f149c39dcb2b1210ccd041956d53f417:418046008,8839c79d192b12100c7171cf8098dfda:-1129952702,f5f88f5da32b1210484ec1acb961bc77:-2061130143,f5c80f5daa2b1210595b3f451b29ff9a:2109055452,85b84b5de32b12106c642803e87af9f8:627207620,b498075d7d2b12106c360f59f2426801:1033192756,5778871d112b12108bb756db38f97f46:2022338199,f658871d4f2b1210504d86315c631590:-1876527051,00c7871dc72b12101f9de0ef4fa3e419:-1849717902,ae36c719222b1210dbc2e782ad22d136:-1568774260,a126cb59152b12106acc7b77b623f708:764627385,25f503591c2b1210809d102568219dc2:1064389197,43c58359b82b1210874be94c99fc4e49:444608545,a3554319c72b121000374cec8e381af7:1250670802,1715c719042b12108bcc94bde3ac8d25:232478680,d7e44319e52b1210030f45f7832acef1:-1072807848,a7a48fd5dd2b121056b67d7fa0deb200:-873548360,db844bd5252b121092605bee82159169:-1835026189,cd644bd54e2b12104229bff158e8166d:-39661858,14c38315862b1210e524ff8a1a7eb150:-1946911176,08730795e22b12106de66abfd25e067c:-1403041374,0dff7651392b12102c319414839eb241:-777510033,90dffe9d8ce712104b572e03adde0ac8:1386555870,56bf7ad5b4e71210db3d830134e6542f:1856096207,f46e3add33e712103580d2b13f426e4a:611914043,90fdfe95bae71210fe5dc84452dc55c3:540414482,d488b69d57a71210ec3c8c0162a091a6:-777510033,3af276d9f6a712100e850822679a2de6:786317595,6ba0bed584a71210084a1bdf82dda030:1215623916,c75e6ad5d1a712105b49d46e432550e5:-1927693564,e24ca6559fa71210c6144988c7eb27c4:137837096,6477269de86712109d48d42b35ebf80d:-1560484801,1450569d3fe31210a254d41174c88940:296112664</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Check In Check Out Widget">d33fbd17c363121089cf1c377d013159</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 11:54:47</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>185345c3a0264f34b6f07123a8e3d9e4</sys_id>
+        <sys_metadata>b7d3825dc3a3121089cf1c377d0131ca</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Check In Check Out Widget</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_widget_b7d3825dc3a3121089cf1c377d0131ca</sys_update_name>
+        <sys_update_version display_value="sp_widget_b7d3825dc3a3121089cf1c377d0131ca">902bbd53c363121089cf1c377d013120</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 11:54:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
