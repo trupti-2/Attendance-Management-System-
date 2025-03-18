@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Attendance Home - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="attendance_home">1e104e1bc363121089cf1c377d013121</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 11:59:18</sys_created_on>
+        <sys_id>b540c25bc363121089cf1c377d013126</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Attendance Home - Container 1</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_container_b540c25bc363121089cf1c377d013126</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-20 10:56:32</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

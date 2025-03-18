@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+
+    // Initialize button states based on status
+    c.$onInit = function() {
+        c.updateButtonStates();
+    };
+
+    c.updateButtonStates = function() {
+        c.disableCheckOut = true;
+        if (c.data.status === "Checked-In") {
+            c.disableCheckIn = true;
+            c.disableCheckOut = false;
+        } else if (c.data.status === "Checked-Out" || !c.data.status) {
+            c.disableCheckIn = false;
+            c.disableCheckOut = true;
+        }
+    };
+
+    c.checkIn = function() {
+        var currentTime = new Date();
+        var istOffset = 5.5 * 60 * 60 * 1000; // Convert UTC to IST (Asia/Kolkata)
+        var istTime = new Date(currentTime.getTime() + istOffset);
+        var formattedTime = istTime.toISOString().slice(0, 19).replace('T', ' ');
+
+        // Update UI immediately
+        c.data.lastCheckIn = formattedTime;
+        c.data.status = "Checked-In";
+        c.disableCheckIn = true; // Disable Check-In button
+        c.disableCheckOut = false; // Enable Check-Out button
+
+        c.server.update({
+            action: "loadData",
+            checkInTime: formattedTime
+        }).then(function(response) {
+            if (response.success) {
+                alert("Checked in successfully");
+            } else {
+                alert(response.errorMessage || "Error in Check-In.");
+                c.disableCheckIn = false;
+                c.disableCheckOut = true;
+            }
+        });
+    };
+
+    c.checkOut = function() {
+        var currentTime = new Date();
+        var istOffset = 5.5 * 60 * 60 * 1000;
+        var istTime = new Date(currentTime.getTime() + istOffset);
+        var formattedTime = istTime.toISOString().slice(0, 19).replace('T', ' ');
+
+        // Update UI immediately
+        c.data.lastCheckOut = formattedTime;
+        c.data.status = "Checked-Out";
+        c.disableCheckIn = false; // Enable Check-In button
+        c.disableCheckOut = true; // Disable Check-Out button
+
+        c.server.update({
+            action: "loadData"
+        }).then(function(response) {
+            if (response.success) {
+                c.data.totalHours = response.totalHours;
+                alert("Checked out successfully");
+            } else {
+                alert(response.errorMessage || "Error in Check-out.");
+                c.disableCheckIn = true;
+                c.disableCheckOut = false;
+            }
+        });
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.text-center {&#13;
+    text-align: center;&#13;
+    background-color: #f2f2f2; &#13;
+    padding: 20px;&#13;
+    border-radius: 10px;&#13;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);&#13;
+    max-width: 800px;&#13;
+    height: 420px;&#13;
+    margin: 20px auto;&#13;
+    &#13;
+}&#13;
+&#13;
+&#13;
+.text-center h2 {&#13;
+    font-size: 40px;&#13;
+    color: #333;&#13;
+    margin-bottom: 15px;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center p {&#13;
+    font-size: 16px;&#13;
+    color: #444;&#13;
+    margin: 8px 0;&#13;
+}&#13;
+&#13;
+.text-center p strong {&#13;
+    color: #222;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn {&#13;
+    display: block;&#13;
+    width: 200px;&#13;
+    padding: 12px;&#13;
+    margin: 10px auto;&#13;
+    font-size: 16px;&#13;
+    font-weight: bold;&#13;
+    border: none;&#13;
+    border-radius: 6px;&#13;
+    cursor: pointer;&#13;
+    transition: all 0.3s ease-in-out;&#13;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn-success {&#13;
+    background-color: #a9c52f  ;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.text-center .btn-success:hover {&#13;
+    background-color: #b5e7a0;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn-danger {&#13;
+    background-color:  #a9c52f;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.text-center .btn-danger:hover {&#13;
+    background-color: #b5e7a0;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn:disabled {&#13;
+    background-color: #aaa;&#13;
+    cursor: not-allowed;&#13;
+    box-shadow: none;&#13;
+}&#13;
+.button-container{&#13;
+        display:flex;&#13;
+        justify-content: center;&#13;
+        gap: 8px; &#13;
+        margin-top: 15px;&#13;
+       &#13;
+}&#13;
+.text-center .btn-info{&#13;
+           margin-top:35px;&#13;
+           background-color:  #a9c52f;&#13;
+           color: white;&#13;
+          &#13;
+}&#13;
+.text-center .btn-info:hover {&#13;
+    background-color: #b5e7a0;&#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn:disabled {&#13;
+    opacity: 1; &#13;
+    cursor: not-allowed; &#13;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); &#13;
+}&#13;
+&#13;
+&#13;
+.text-center .btn:disabled {&#13;
+    filter: brightness(0.9); &#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>check_in</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>CheckInCheckOut</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.userName = gs.getUserDisplayName();
+    data.status = "Not Checked In";
+    data.lastCheckIn = "No Check-in yet";
+    data.lastCheckOut = "No Check-out yet";
+    data.totalHours = "N/A";
+
+    var grAttendance = new GlideRecord("x_1596199_attend_attendance_data");
+    grAttendance.addQuery("employee", gs.getUserID());
+    grAttendance.orderByDesc("sys_created_on");
+    grAttendance.query();
+
+    var today = new GlideDateTime();
+    today.setDisplayValue(new GlideDateTime().getDisplayValue().split(" ")[0] + " 00:00:00"); 
+
+    // Check if user has already checked in today
+    var checkedInToday = false;
+    if (grAttendance.next()) {
+        var checkInDate = new GlideDateTime(grAttendance.getValue("check_in_time"));
+        if (checkInDate >= today) {
+            checkedInToday = true;
+            data.status = grAttendance.getValue("status") || "Not Checked In";
+            data.lastCheckIn = grAttendance.getValue("check_in_time") ? new GlideDateTime(grAttendance.getValue("check_in_time")).getDisplayValue() : "No Check-in yet";
+            data.lastCheckOut = grAttendance.getValue("check_out_time") ? new GlideDateTime(grAttendance.getValue("check_out_time")).getDisplayValue() : "No Check-out yet";
+            data.totalHours = grAttendance.getValue("total_hours") ? grAttendance.getValue("total_hours") : "N/A";
+        }
+
+        if (data.status === "Checked-Out") {
+            data.status = "Not Checked In";
+            data.lastCheckIn = "No Check-in yet";
+            data.lastCheckOut = "No Check-out yet";
+            data.totalHours = "N/A";
+            data.disableCheckIn = false;
+            data.disableCheckOut = true;
+        } else {
+            data.disableCheckIn = (data.status === "Checked-In");
+            data.disableCheckOut = (data.status !== "Checked-In");
+        }
+    } else {
+        data.disableCheckIn = false;
+        data.disableCheckOut = true;
+    }
+
+    // Prevent multiple check-ins or check-outs on the same day
+    if (input && input.status == "Checked-In") {
+        if (checkedInToday) {
+            data.success = false;
+            data.errorMessage = "You have already checked in today.";
+        } else {
+            var datetime = new GlideDateTime();
+            var checkInRecord = new GlideRecord('x_1596199_attend_attendance_data');
+            checkInRecord.initialize();
+            checkInRecord.setValue("employee", gs.getUserID());
+            checkInRecord.setValue("check_in_time", datetime);  
+            checkInRecord.setValue("status", "Checked-In");
+            var recordID = checkInRecord.insert();
+            if (recordID) {
+                data.success = true;
+                data.status = "Checked-In";
+                data.lastCheckIn = datetime.getDisplayValue(); // ]]>🛠<![CDATA[ Ensure correct timezone
+                data.lastCheckOut = "No Check-out yet";
+                data.totalHours = "N/A";
+                data.disableCheckIn = true;
+                data.disableCheckOut = false;
+            } else {
+                data.success = false;
+            }
+        }
+    }
+
+    if (input && input.status == "Checked-Out") {
+        if (!checkedInToday) {
+            data.success = false;
+            data.errorMessage = "You cannot check out without checking in first.";
+        } else {
+            var outdatetime = new GlideDateTime();
+            var grAttendance = new GlideRecord("x_1596199_attend_attendance_data");
+            grAttendance.addQuery("employee", gs.getUserID());
+            grAttendance.orderByDesc("sys_created_on");
+            grAttendance.query();
+
+            if (grAttendance.next()) {
+                grAttendance.setValue("check_out_time", outdatetime);  
+                grAttendance.setValue("status", "Checked-Out");
+
+                var checkInTime = new GlideDateTime(grAttendance.getValue("check_in_time"));
+                var checkOutTime = new GlideDateTime(grAttendance.getValue("check_out_time"));
+                var duration = checkOutTime.getNumericValue() - checkInTime.getNumericValue();
+                var totalHours = duration / (1000 * 60 * 60);
+
+                grAttendance.setValue("total_hours", totalHours.toFixed(2));
+                data.totalHours = totalHours.toFixed(2);
+
+                grAttendance.update();
+                data.success = true;
+                data.status = "Checked-Out";
+                data.lastCheckOut = outdatetime.getDisplayValue(); // ]]>🛠<![CDATA[ Ensure correct timezone
+                data.disableCheckIn = false;
+                data.disableCheckOut = true;
+            }
+        }
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 11:58:10</sys_created_on>
+        <sys_id>e39ffdd7c363121089cf1c377d0131ae</sys_id>
+        <sys_mod_count>131</sys_mod_count>
+        <sys_name>CheckInCheckOut</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_e39ffdd7c363121089cf1c377d0131ae</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-13 10:02:24</sys_updated_on>
+        <template><![CDATA[<div class="text-center" >
+    <h2>Attendance Page</h2>
+   
+    <p><strong>Employee:</strong> {{ data.userName }}</p>
+    <p><strong>Last Check-in:</strong> {{ c.data.lastCheckIn  ||  "No Check-in yet" }}</p>
+    <p><strong>Last Check-out:</strong> {{ c.data.lastCheckOut || "No Check-out yet" }}</p>
+    <p><strong>Status:</strong> {{ c.data.status || "Not Checked In" }}</p>
+    <p><strong>Total Hours:</strong>{{c.data.totalHours || "N/A"}}</p>
+    
+   <div class="button-container">
+      <button class="btn btn-success" ng-click="c.checkIn()" ng-disabled="c.disableCheckIn">Check-In</button>
+      <button class="btn btn-danger" ng-click="c.checkOut()" ng-disabled="c.disableCheckOut">Check-Out</button>
+   </div>
+    
+    <a href="?id=attendance_history_page" class="btn btn-info">View Attendance History</a>
+</div>
+   ]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e39ffdd7c363121089cf1c377d0131ae</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 11:58:09</sys_created_on>
+        <sys_id>38004a17c363121089cf1c377d0131e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 11:58:09</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

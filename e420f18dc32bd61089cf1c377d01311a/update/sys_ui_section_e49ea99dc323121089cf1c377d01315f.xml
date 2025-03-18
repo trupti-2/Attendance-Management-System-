@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="e49ea99dc323121089cf1c377d01315f" sys_domain="global" table="x_1596199_attend_attendance_data" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>employee</element>
+            <position>0</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>0cee61ddc323121089cf1c377d0131d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>check_in_time</element>
+            <position>1</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>80ee61ddc323121089cf1c377d0131d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>check_out_time</element>
+            <position>2</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>08ee61ddc323121089cf1c377d0131d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>8cee61ddc323121089cf1c377d0131d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>total_hours</element>
+            <position>4</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>04ee61ddc323121089cf1c377d0131d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>5</position>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:35:26</sys_created_on>
+            <sys_id>88ee61ddc323121089cf1c377d0131d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1596199_attend_attendance_data" sys_domain="global" view="Default view">e49ea99dc323121089cf1c377d01315f</sys_ui_section>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:35:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1596199_attend_attendance_data</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>truptibidave02</sys_created_by>
+            <sys_created_on>2025-02-05 05:34:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e49ea99dc323121089cf1c377d01315f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1596199_attend_attendance_data</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+            <sys_update_name>sys_ui_section_e49ea99dc323121089cf1c377d01315f</sys_update_name>
+            <sys_updated_by>truptibidave02</sys_updated_by>
+            <sys_updated_on>2025-02-05 05:34:06</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

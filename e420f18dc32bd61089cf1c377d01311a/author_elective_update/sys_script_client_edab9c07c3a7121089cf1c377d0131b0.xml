@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>check_out_time</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>CalculateWorkingHours</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue == '') {
+        return; // Exit if the form is still loading or the new value is empty
+    }
+
+    var checkIn = g_form.getValue('check_in_time');
+    var checkOut = g_form.getValue('check_out_time');
+
+    if (checkIn && checkOut) {
+        var checkInTime = new Date(checkIn);
+        var checkOutTime = new Date(checkOut);
+
+        var duration = checkOutTime - checkInTime; // Difference in milliseconds
+        var totalHours = duration / (1000 * 60 * 60); // Convert milliseconds to hours
+
+        g_form.setValue('total_hours', totalHours.toFixed(2)); // Update total hours field
+        g_form.setValue('status', 'Checked-Out'); // Update status field
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 10:44:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>edab9c07c3a7121089cf1c377d0131b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CalculateWorkingHours</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_script_client_edab9c07c3a7121089cf1c377d0131b0</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:44:56</sys_updated_on>
+        <table>x_1596199_attend_attendance_data</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_script_client_edab9c07c3a7121089cf1c377d0131b0</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;check_out_time&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;CalculateWorkingHours&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue == '') {
+        return; // Exit if the form is still loading or the new value is empty
+    }
+
+    var checkIn = g_form.getValue('check_in_time');
+    var checkOut = g_form.getValue('check_out_time');
+
+    if (checkIn &amp;&amp; checkOut) {
+        var checkInTime = new Date(checkIn);
+        var checkOutTime = new Date(checkOut);
+
+        var duration = checkOutTime - checkInTime; // Difference in milliseconds
+        var totalHours = duration / (1000 * 60 * 60); // Convert milliseconds to hours
+
+        g_form.setValue('total_hours', totalHours.toFixed(2)); // Update total hours field
+        g_form.setValue('status', 'Checked-Out'); // Update status field
+    }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 10:44:56&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;edab9c07c3a7121089cf1c377d0131b0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;CalculateWorkingHours&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_edab9c07c3a7121089cf1c377d0131b0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 10:44:56&lt;/sys_updated_on&gt;&lt;table&gt;x_1596199_attend_attendance_data&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1117612227</payload_hash>
+        <record_name>CalculateWorkingHours</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 10:44:56</sys_created_on>
+        <sys_id>7aa52403c3e7121089cf1c377d013117</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194ef7652bf0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:44:56</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>3ea52403efe71210f52f0159df277e16</update_guid>
+        <update_guid_history>3ea52403efe71210f52f0159df277e16:-1117612227</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-25 09:54:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>1685e5da42384b86862ff712089b79a4</sys_id>
+        <sys_metadata>edab9c07c3a7121089cf1c377d0131b0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CalculateWorkingHours</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent display_value="Attendance Data">4a6ce5d9c323121089cf1c377d013166</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_script_client_edab9c07c3a7121089cf1c377d0131b0</sys_update_name>
+        <sys_update_version display_value="sys_script_client_edab9c07c3a7121089cf1c377d0131b0">7aa52403c3e7121089cf1c377d013117</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-25 09:54:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

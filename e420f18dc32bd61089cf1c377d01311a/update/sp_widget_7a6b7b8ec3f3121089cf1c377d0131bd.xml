@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $interval) {
+  /* widget controller */
+
+ var c = this;
+
+    function updateClock() {
+        var now = new Date();
+        
+        
+        var dayName = now.toLocaleString("en-us", { weekday: "long" });
+        var month = now.toLocaleString("en-us", { month: "long" });
+        var dayNum = now.getDate();
+        var year = now.getFullYear();
+
+        
+        var hour = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var period = hour >= 12 ? "PM" : "AM";
+
+      
+
+    
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        
+        c.dayName = dayName;
+        c.month = month;
+        c.dayNum = dayNum;
+        c.year = year;
+        c.hour = hour;
+        c.minutes = minutes;
+        c.seconds = seconds;
+        c.period = period;
+    }
+
+    
+    var clockInterval = $interval(updateClock, 1000);
+
+  
+    updateClock();
+
+    
+    $scope.$on('$destroy', function() {
+        $interval.cancel(clockInterval);
+    });
+};
+
+
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.digital-clock {&#13;
+    text-align: center;&#13;
+    font-family: "Arial", sans-serif;&#13;
+    background: #222;&#13;
+    color: #0f0;&#13;
+    padding: 10px;&#13;
+    border-radius: 10px;&#13;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);&#13;
+}&#13;
+&#13;
+.digital-clock .date {&#13;
+    font-size: 1.5em;&#13;
+    margin-bottom: 10px;&#13;
+}&#13;
+&#13;
+.digital-clock .time {&#13;
+    font-size: 2.5em;&#13;
+    font-weight: bold;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>digital_clock</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Digital Clock</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-20 10:02:17</sys_created_on>
+        <sys_id>7a6b7b8ec3f3121089cf1c377d0131bd</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Digital Clock</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_7a6b7b8ec3f3121089cf1c377d0131bd</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 10:27:48</sys_updated_on>
+        <template><![CDATA[<div class="digital-clock">
+   
+    <div class="date">
+        <span>{{ c.dayName }}</span>,
+        <span>{{ c.month }}</span>
+        <span>{{ c.dayNum }}</span>,
+        <span>{{ c.year }}</span>
+    </div>
+    <div class="time">
+        <span>{{ c.hour }}</span>:
+        <span>{{ c.minutes }}</span>:
+        <span>{{c.seconds }}</span>
+        <span>{{c.period }}</span>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>7a6b7b8ec3f3121089cf1c377d0131bd</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-20 10:02:15</sys_created_on>
+        <sys_id>0fcbfb02c337121089cf1c377d0131c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-20 10:02:15</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

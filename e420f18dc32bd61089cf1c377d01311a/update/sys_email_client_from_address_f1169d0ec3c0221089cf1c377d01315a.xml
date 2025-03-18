@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_email_client_from_address">
+    <sys_email_client_from_address action="INSERT_OR_UPDATE">
+        <display_name>rishajdoieru</display_name>
+        <email_address>nishmow.ueyrt123@gmail.com</email_address>
+        <sys_class_name>sys_email_client_from_address</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 08:14:35</sys_created_on>
+        <sys_id>f1169d0ec3c0221089cf1c377d01315a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>nishmow.ueyrt123@gmail.com</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_email_client_from_address_f1169d0ec3c0221089cf1c377d01315a</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 08:14:35</sys_updated_on>
+    </sys_email_client_from_address>
+</record_update>

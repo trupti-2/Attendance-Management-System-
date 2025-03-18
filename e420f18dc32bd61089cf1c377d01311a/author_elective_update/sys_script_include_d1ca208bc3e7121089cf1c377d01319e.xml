@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1596199_attend.Attendnace Actions</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Attendnace Actions</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var  AttendanceActions= Class.create();
+AttendanceActions.prototype = {
+    initialize: function() {},
+
+    checkInEmployee: function() {
+        var userId = gs.getUserID(); // Get the current logged-in user
+        var now = new GlideDateTime(); // Get current date and time
+
+        // Check if user is already checked in
+        var gr = new GlideRecord('x_1596199_attend_attendance_data');
+        gr.addQuery('employee', userId);
+        gr.addQuery('status', 'Checked-In');
+        gr.query();
+
+        if (gr.next()) {
+            return JSON.stringify({ success: false, error: "Already checked in. Please check out first." });
+        }
+
+        // Insert new check-in record
+        var record = new GlideRecord('x_1596199_attend_attendance_data');
+        record.initialize();
+        record.employee = userId;
+        record.check_in_time = now;
+        record.status = "Checked-In";
+        record.insert();
+
+        return JSON.stringify({ success: true, checkInTime: now.getDisplayValue() });
+    },
+
+    type: 'AttendanceActions'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 11:08:10</sys_created_on>
+        <sys_id>d1ca208bc3e7121089cf1c377d01319e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Attendnace Actions</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_script_include_d1ca208bc3e7121089cf1c377d01319e</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 12:25:34</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>d1ca208bc3e7121089cf1c377d01319e</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-10 11:08:09</sys_created_on>
+        <sys_id>03fa248bc3e7121089cf1c377d0131ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-10 11:08:09</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_script_include_d1ca208bc3e7121089cf1c377d01319e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1596199_attend.Attendnace Actions&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;Attendnace Actions&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var  AttendanceActions= Class.create();
+AttendanceActions.prototype = {
+    initialize: function() {},
+
+    checkInEmployee: function() {
+        var userId = gs.getUserID(); // Get the current logged-in user
+        var now = new GlideDateTime(); // Get current date and time
+
+        // Check if user is already checked in
+        var gr = new GlideRecord('x_1596199_attend_attendance_data');
+        gr.addQuery('employee', userId);
+        gr.addQuery('status', 'Checked-In');
+        gr.query();
+
+        if (gr.next()) {
+            return JSON.stringify({ success: false, error: "Already checked in. Please check out first." });
+        }
+
+        // Insert new check-in record
+        var record = new GlideRecord('x_1596199_attend_attendance_data');
+        record.initialize();
+        record.employee = userId;
+        record.check_in_time = now;
+        record.status = "Checked-In";
+        record.insert();
+
+        return JSON.stringify({ success: true, checkInTime: now.getDisplayValue() });
+    },
+
+    type: 'AttendanceActions'
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 11:08:10&lt;/sys_created_on&gt;&lt;sys_id&gt;d1ca208bc3e7121089cf1c377d01319e&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Attendnace Actions&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_d1ca208bc3e7121089cf1c377d01319e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-11 12:25:34&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;d1ca208bc3e7121089cf1c377d01319e&lt;/id&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 11:08:09&lt;/sys_created_on&gt;&lt;sys_id&gt;03fa248bc3e7121089cf1c377d0131ac&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 11:08:09&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>843032762</payload_hash>
+        <record_name>Attendnace Actions</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-11 12:25:34</sys_created_on>
+        <sys_id>a646465bc363121089cf1c377d013116</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194f4f8d1910000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-11 12:25:34</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>ea46465ba2631210fd6fb11df8714415</update_guid>
+        <update_guid_history>ea46465ba2631210fd6fb11df8714415:843032762,dbaf2803e72b1210a6e060e182e987a8:1630069764,a41ce8cb8be71210dbd2f9261be163b6:655297705,0bfae0470fe71210594eec14cc3321e7:1876936197</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-13 06:03:27</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>41fc027838c1465c96995a78e5abb2e4</sys_id>
+        <sys_metadata>d1ca208bc3e7121089cf1c377d01319e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Attendnace Actions</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_script_include_d1ca208bc3e7121089cf1c377d01319e</sys_update_name>
+        <sys_update_version display_value="sys_script_include_d1ca208bc3e7121089cf1c377d01319e">a646465bc363121089cf1c377d013116</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-13 06:03:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

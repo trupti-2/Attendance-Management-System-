@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">06c5c02fc3f3121089cf1c377d0131a6</sp_column>
+        <sp_widget display_value="Cool Clock">3a36b30b6f3631005be8583e6b3ee490</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-25 12:55:13</sys_created_on>
+        <sys_id>dd531a7bc37b121089cf1c377d013107</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_instance_dd531a7bc37b121089cf1c377d013107</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-25 12:55:17</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=dd531a7bc37b121089cf1c377d013107"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_instance_dd531a7bc37b121089cf1c377d013107</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="2">06c5c02fc3f3121089cf1c377d0131a6</sp_column><sp_widget display_value="Cool Clock">3a36b30b6f3631005be8583e6b3ee490</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-02-25 12:55:13</sys_created_on><sys_id>dd531a7bc37b121089cf1c377d013107</sys_id><sys_mod_count>1</sys_mod_count><sys_name/><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sp_instance_dd531a7bc37b121089cf1c377d013107</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-02-25 12:55:17</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=dd531a7bc37b121089cf1c377d013107"/></record_update>]]></payload>
+        <payload_hash>-889882905</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-02-25 12:55:17</sys_created_on>
+        <sys_id>a6535a7bc37b121089cf1c377d013183</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1953d2d0e3a0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-02-25 12:55:17</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>6e535a7b317b121082914e07d1a71d82</update_guid>
+        <update_guid_history>6e535a7b317b121082914e07d1a71d82:-889882905,99531a7b057b1210bc0335274246da09:46832680</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">433d9cf5c344221089cf1c377d0131ff</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-03 09:27:04</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>4b8da2ab6acb49c69a7136d4e442e704</sys_id>
+        <sys_metadata>dd531a7bc37b121089cf1c377d013107</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_instance_dd531a7bc37b121089cf1c377d013107</sys_update_name>
+        <sys_update_version display_value="sp_instance_dd531a7bc37b121089cf1c377d013107">a6535a7bc37b121089cf1c377d013183</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:27:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

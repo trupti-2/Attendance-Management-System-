@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">f650065bc363121089cf1c377d0131e9</sp_column>
+        <sp_widget display_value="Actions Widget">38a3a159530201101865ddeeff7b1263</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-18 07:24:27</sys_created_on>
+        <sys_id>848405a9c3b3121089cf1c377d01310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_instance_848405a9c3b3121089cf1c377d01310b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-18 07:24:27</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=848405a9c3b3121089cf1c377d01310b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_instance_848405a9c3b3121089cf1c377d01310b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">f650065bc363121089cf1c377d0131e9</sp_column><sp_widget display_value="Actions Widget">38a3a159530201101865ddeeff7b1263</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-18 07:24:27</sys_created_on><sys_id>848405a9c3b3121089cf1c377d01310b</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sp_instance_848405a9c3b3121089cf1c377d01310b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-18 07:24:27</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=848405a9c3b3121089cf1c377d01310b"/></record_update>]]></payload>
+        <payload_hash>-407310267</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-18 07:24:27</sys_created_on>
+        <sys_id>008445a9c3b3121089cf1c377d013146</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19517f1a74d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-18 07:24:27</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>048445a9c9b31210213c6d3eb374a545</update_guid>
+        <update_guid_history>048445a9c9b31210213c6d3eb374a545:-407310267</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">5f8401a9c3b3121089cf1c377d013191</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-18 07:24:41</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>32d0a386bbe74c9a8ecabfaf2c794564</sys_id>
+        <sys_metadata>848405a9c3b3121089cf1c377d01310b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_instance_848405a9c3b3121089cf1c377d01310b</sys_update_name>
+        <sys_update_version display_value="sp_instance_848405a9c3b3121089cf1c377d01310b">008445a9c3b3121089cf1c377d013146</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-18 07:24:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

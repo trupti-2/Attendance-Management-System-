@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($timeout) {
+
+  var c = this;
+	var reportId = c.options.report_id || '';
+	c.rectangleId = c.widget.rectangle_id || c.data.rectangleId;
+
+	c.showTitle = (c.options.show_title === true || c.options.show_title === 'true');
+	c.title = c.options.title || '';
+
+	if (c.options.widget_parameters){
+		c.initialMessage = c.data.ch.i18n.building;
+		window.chartHelpers = window.chartHelpers || {};
+		$.extend(window.chartHelpers, c.data.ch);
+		$timeout(function(){
+			var targetEl = $("#report-widget-"+c.rectangleId);
+			embedReportById(targetEl, reportId);
+		});
+	}
+	else {
+		c.initialMessage = c.data.ch.i18n.selectReport;
+	}
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.report-widget-wrap {&#13;
+			background:#fff;&#13;
+			padding:15px;&#13;
+			margin: 0 0 15px 0;&#13;
+			}&#13;
+			&#13;
+			.report-widget-title {&#13;
+			padding: $sp-space--xl;&#13;
+			font-weight:bold;&#13;
+			margin-top: 0;&#13;
+			margin-bottom: 0;&#13;
+			font-family: $now-sp-font-family-sans-serif;&#13;
+			color: $text-color;&#13;
+			font-size: $font-size-h4;&#13;
+			&#13;
+			}&#13;
+			&#13;
+			.highcharts-container g.highcharts-button *,&#13;
+			.highcharts-container image.hc-image {&#13;
+			transition: fill-opacity 0.3s linear, stroke-opacity 0.3s linear, opacity 0.3s linear;&#13;
+			fill-opacity: 0;&#13;
+			stroke-opacity: 0;&#13;
+			opacity:0;&#13;
+			}&#13;
+			&#13;
+			.highcharts-container:hover g.highcharts-button *,&#13;
+			.highcharts-container:hover image.hc-image {&#13;
+			fill-opacity: 1;&#13;
+			stroke-opacity: 1;&#13;
+			opacity:1;&#13;
+			}&#13;
+			&#13;
+			.highcharts-legend-item span::after,&#13;
+			.highcharts-legend-item::after {&#13;
+			content: "\200E";&#13;
+			}&#13;
+			&#13;
+			table.wide .pivot_cell,&#13;
+			table.wide .pivot_caption,&#13;
+			table.wide .pivot_caption_dark {&#13;
+			padding: 3px 5px;&#13;
+			}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Widget for embedding reports on the Service Portal.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Copy of Report</name>
+        <option_schema>[{"displayValue":"Report","name":"report_id","label":"Report","type":"reference","value":"sys_report","ed":{"reference":"sys_report"}},{"hint":"","name":"show_title","default_value":"true","label":"Show title","type":"boolean"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	options.report_id = options.report_id || '';
+
+	if (options.report_id !== '') {
+		var reportGr = new GlideRecord('sys_report');
+		reportGr.get(options.report_id);
+		if (reportGr.canRead())
+			options.title = reportGr.getDisplayValue('title');
+	}
+
+	var chartHelpers = chartHelpers || {};
+	chartHelpers.i18n = chartHelpers.i18n || {};
+
+	chartHelpers.i18n.selectReport = gs.getMessage('Select a report in widget options!');
+	chartHelpers.i18n.building = gs.getMessage('Building chart, please wait...');
+	chartHelpers.i18n.total = gs.getMessage('Total');
+	chartHelpers.i18n.maxCells = gs.getMessage('The size of the pivot table is too big. Use filters to reduce it or switch to a modern browser.');
+	chartHelpers.i18n.chartGenerationError = gs.getMessage('An error occurred while generating chart. Please try again later.');
+
+	chartHelpers.i18n.showAsHeatmap = gs.getMessage('Show data as a heatmap visualization');
+	chartHelpers.i18n.showAsMarkers = gs.getMessage('Show data using latitude and longitude');
+	chartHelpers.i18n.saveAsJpg = gs.getMessage('Save as JPEG');
+	chartHelpers.i18n.saveAsPng = gs.getMessage('Save as PNG');
+	chartHelpers.i18n.highlightBasedOn = gs.getMessage('Highlight based on:');
+	chartHelpers.i18n.isRTL = GlideI18NStyle().getDirection().equals('rtl');
+	chartHelpers.i18n.weekNumberTitle = gs.getMessage('Week');
+	chartHelpers.i18n.weekNumberTitleShort = gs.getMessage('W');
+	chartHelpers.i18n.seeMoreEvents = gs.getMessage('See {0} more events');
+	chartHelpers.i18n.viewEventsInList = gs.getMessage('View {0} events in a list');
+	chartHelpers.i18n.viewAllEventsInList = gs.getMessage('View all events in a list');
+	chartHelpers.i18n.viewAllRecords = gs.getMessage('View all records');
+	chartHelpers.i18n.none = gs.getMessage('None');
+	chartHelpers.i18n.plusMany = gs.getMessage('+ many');
+	chartHelpers.i18n.plusMore = gs.getMessage('+ {0} more');
+	chartHelpers.i18n.buttonText = {
+		prevYear: "",
+		nextYear: "",
+		today: gs.getMessage('today'),
+		year:	gs.getMessage('year'),
+		month:gs.getMessage('month'),
+		week:gs.getMessage('week'),
+		day:gs.getMessage('day')
+	};
+	chartHelpers.i18n.allDayHtml = gs.getMessage('all-day');
+	chartHelpers.i18n.daysNames = [
+		gs.getMessage('Sunday'),
+		gs.getMessage('Monday'),
+		gs.getMessage('Tuesday'),
+		gs.getMessage('Wednesday'),
+		gs.getMessage('Thursday'),
+		gs.getMessage('Friday'),
+		gs.getMessage('Saturday')
+	];
+	chartHelpers.i18n.dayNamesShort = [
+		gs.getMessage('Sun'),
+		gs.getMessage('Mon'),
+		gs.getMessage('Tue'),
+		gs.getMessage('Wed'),
+		gs.getMessage('Thu'),
+		gs.getMessage('Fri'),
+		gs.getMessage('Sat')
+	];
+	chartHelpers.i18n.monthNames = [
+		gs.getMessage('January'),
+		gs.getMessage('February'),
+		gs.getMessage('March'),
+		gs.getMessage('April'),
+		gs.getMessage('May'),
+		gs.getMessage('June'),
+		gs.getMessage('July'),
+		gs.getMessage('August'),
+		gs.getMessage('September'),
+		gs.getMessage('October'),
+		gs.getMessage('November'),
+		gs.getMessage('December')
+	];
+	chartHelpers.i18n.monthNamesShort = [
+		gs.getMessage('Jan'),
+		gs.getMessage('Feb'),
+		gs.getMessage('Mar'),
+		gs.getMessage('Apr'),
+		gs.getMessage('May'),
+		gs.getMessage('Jun'),
+		gs.getMessage('Jul'),
+		gs.getMessage('Aug'),
+		gs.getMessage('Sep'),
+		gs.getMessage('Oct'),
+		gs.getMessage('Nov'),
+		gs.getMessage('Dec')
+	];
+	chartHelpers.i18n.none = gs.getMessage('-- None --');
+	chartHelpers.i18n.groupBy = gs.getMessage('Group by');
+	chartHelpers.i18n.groupByTitle = gs.getMessage('Select a different group by field');
+	chartHelpers.i18n.stackBy = gs.getMessage('Stacked by');
+	chartHelpers.i18n.stackByTitle = gs.getMessage('Select a different stacked by field');
+	chartHelpers.device = {};
+	chartHelpers.device.type = GlideMobileExtensions.getDeviceType();
+
+	chartHelpers.systemParams = {
+		firstDay: (gs.getProperty("glide.ui.date_format.first_day_of_week", 2) - 1) % 7,
+		defaultDate: SNC.ReportUtil.getNowTimeInUSFormat(),
+		maxEventsDisplayedPerCell: gs.getProperty("glide.report.calendar.max_events_displayed_per_cell", 3),
+		maxMoreEventsPerDay: gs.getProperty("glide.report.calendar.max_more_events_per_day", 30),
+		defaultEventDuration: gs.getProperty("glide.report.calendar.default_event_duration", "01:00:00"),
+		maxDaysBack: gs.getProperty("glide.report.calendar.max_days_back", 30),
+		enablePreviewOnHover: gs.getProperty("glide.report.calendar.enable_preview_on_hover", false)
+	};
+
+		data.rectangleId = gs.generateGUID();
+		data.ch = chartHelpers;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 05:55:35</sys_created_on>
+        <sys_id>08335ccbc300221089cf1c377d01316d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Report</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_08335ccbc300221089cf1c377d01316d</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-07 05:55:35</sys_updated_on>
+        <template><![CDATA[<div class="report-widget-wrap">
+
+	<h2 ng-if="c.showTitle" tabindex="0" id="{{'title-' + c.rectangleId }}" class="report-widget-title">{{c.title}}</h2>
+
+	<div id="report-widget-{{c.rectangleId}}">
+     {{::c.initialMessage}}
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_widget_08335ccbc300221089cf1c377d01316d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($timeout) {
+
+  var c = this;
+	var reportId = c.options.report_id || '';
+	c.rectangleId = c.widget.rectangle_id || c.data.rectangleId;
+
+	c.showTitle = (c.options.show_title === true || c.options.show_title === 'true');
+	c.title = c.options.title || '';
+
+	if (c.options.widget_parameters){
+		c.initialMessage = c.data.ch.i18n.building;
+		window.chartHelpers = window.chartHelpers || {};
+		$.extend(window.chartHelpers, c.data.ch);
+		$timeout(function(){
+			var targetEl = $("#report-widget-"+c.rectangleId);
+			embedReportById(targetEl, reportId);
+		});
+	}
+	else {
+		c.initialMessage = c.data.ch.i18n.selectReport;
+	}
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.report-widget-wrap {&amp;#13;
+			background:#fff;&amp;#13;
+			padding:15px;&amp;#13;
+			margin: 0 0 15px 0;&amp;#13;
+			}&amp;#13;
+			&amp;#13;
+			.report-widget-title {&amp;#13;
+			padding: $sp-space--xl;&amp;#13;
+			font-weight:bold;&amp;#13;
+			margin-top: 0;&amp;#13;
+			margin-bottom: 0;&amp;#13;
+			font-family: $now-sp-font-family-sans-serif;&amp;#13;
+			color: $text-color;&amp;#13;
+			font-size: $font-size-h4;&amp;#13;
+			&amp;#13;
+			}&amp;#13;
+			&amp;#13;
+			.highcharts-container g.highcharts-button *,&amp;#13;
+			.highcharts-container image.hc-image {&amp;#13;
+			transition: fill-opacity 0.3s linear, stroke-opacity 0.3s linear, opacity 0.3s linear;&amp;#13;
+			fill-opacity: 0;&amp;#13;
+			stroke-opacity: 0;&amp;#13;
+			opacity:0;&amp;#13;
+			}&amp;#13;
+			&amp;#13;
+			.highcharts-container:hover g.highcharts-button *,&amp;#13;
+			.highcharts-container:hover image.hc-image {&amp;#13;
+			fill-opacity: 1;&amp;#13;
+			stroke-opacity: 1;&amp;#13;
+			opacity:1;&amp;#13;
+			}&amp;#13;
+			&amp;#13;
+			.highcharts-legend-item span::after,&amp;#13;
+			.highcharts-legend-item::after {&amp;#13;
+			content: "\200E";&amp;#13;
+			}&amp;#13;
+			&amp;#13;
+			table.wide .pivot_cell,&amp;#13;
+			table.wide .pivot_caption,&amp;#13;
+			table.wide .pivot_caption_dark {&amp;#13;
+			padding: 3px 5px;&amp;#13;
+			}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Widget for embedding reports on the Service Portal.&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Copy of Report&lt;/name&gt;&lt;option_schema&gt;[{"displayValue":"Report","name":"report_id","label":"Report","type":"reference","value":"sys_report","ed":{"reference":"sys_report"}},{"hint":"","name":"show_title","default_value":"true","label":"Show title","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	options.report_id = options.report_id || '';
+
+	if (options.report_id !== '') {
+		var reportGr = new GlideRecord('sys_report');
+		reportGr.get(options.report_id);
+		if (reportGr.canRead())
+			options.title = reportGr.getDisplayValue('title');
+	}
+
+	var chartHelpers = chartHelpers || {};
+	chartHelpers.i18n = chartHelpers.i18n || {};
+
+	chartHelpers.i18n.selectReport = gs.getMessage('Select a report in widget options!');
+	chartHelpers.i18n.building = gs.getMessage('Building chart, please wait...');
+	chartHelpers.i18n.total = gs.getMessage('Total');
+	chartHelpers.i18n.maxCells = gs.getMessage('The size of the pivot table is too big. Use filters to reduce it or switch to a modern browser.');
+	chartHelpers.i18n.chartGenerationError = gs.getMessage('An error occurred while generating chart. Please try again later.');
+
+	chartHelpers.i18n.showAsHeatmap = gs.getMessage('Show data as a heatmap visualization');
+	chartHelpers.i18n.showAsMarkers = gs.getMessage('Show data using latitude and longitude');
+	chartHelpers.i18n.saveAsJpg = gs.getMessage('Save as JPEG');
+	chartHelpers.i18n.saveAsPng = gs.getMessage('Save as PNG');
+	chartHelpers.i18n.highlightBasedOn = gs.getMessage('Highlight based on:');
+	chartHelpers.i18n.isRTL = GlideI18NStyle().getDirection().equals('rtl');
+	chartHelpers.i18n.weekNumberTitle = gs.getMessage('Week');
+	chartHelpers.i18n.weekNumberTitleShort = gs.getMessage('W');
+	chartHelpers.i18n.seeMoreEvents = gs.getMessage('See {0} more events');
+	chartHelpers.i18n.viewEventsInList = gs.getMessage('View {0} events in a list');
+	chartHelpers.i18n.viewAllEventsInList = gs.getMessage('View all events in a list');
+	chartHelpers.i18n.viewAllRecords = gs.getMessage('View all records');
+	chartHelpers.i18n.none = gs.getMessage('None');
+	chartHelpers.i18n.plusMany = gs.getMessage('+ many');
+	chartHelpers.i18n.plusMore = gs.getMessage('+ {0} more');
+	chartHelpers.i18n.buttonText = {
+		prevYear: "",
+		nextYear: "",
+		today: gs.getMessage('today'),
+		year:	gs.getMessage('year'),
+		month:gs.getMessage('month'),
+		week:gs.getMessage('week'),
+		day:gs.getMessage('day')
+	};
+	chartHelpers.i18n.allDayHtml = gs.getMessage('all-day');
+	chartHelpers.i18n.daysNames = [
+		gs.getMessage('Sunday'),
+		gs.getMessage('Monday'),
+		gs.getMessage('Tuesday'),
+		gs.getMessage('Wednesday'),
+		gs.getMessage('Thursday'),
+		gs.getMessage('Friday'),
+		gs.getMessage('Saturday')
+	];
+	chartHelpers.i18n.dayNamesShort = [
+		gs.getMessage('Sun'),
+		gs.getMessage('Mon'),
+		gs.getMessage('Tue'),
+		gs.getMessage('Wed'),
+		gs.getMessage('Thu'),
+		gs.getMessage('Fri'),
+		gs.getMessage('Sat')
+	];
+	chartHelpers.i18n.monthNames = [
+		gs.getMessage('January'),
+		gs.getMessage('February'),
+		gs.getMessage('March'),
+		gs.getMessage('April'),
+		gs.getMessage('May'),
+		gs.getMessage('June'),
+		gs.getMessage('July'),
+		gs.getMessage('August'),
+		gs.getMessage('September'),
+		gs.getMessage('October'),
+		gs.getMessage('November'),
+		gs.getMessage('December')
+	];
+	chartHelpers.i18n.monthNamesShort = [
+		gs.getMessage('Jan'),
+		gs.getMessage('Feb'),
+		gs.getMessage('Mar'),
+		gs.getMessage('Apr'),
+		gs.getMessage('May'),
+		gs.getMessage('Jun'),
+		gs.getMessage('Jul'),
+		gs.getMessage('Aug'),
+		gs.getMessage('Sep'),
+		gs.getMessage('Oct'),
+		gs.getMessage('Nov'),
+		gs.getMessage('Dec')
+	];
+	chartHelpers.i18n.none = gs.getMessage('-- None --');
+	chartHelpers.i18n.groupBy = gs.getMessage('Group by');
+	chartHelpers.i18n.groupByTitle = gs.getMessage('Select a different group by field');
+	chartHelpers.i18n.stackBy = gs.getMessage('Stacked by');
+	chartHelpers.i18n.stackByTitle = gs.getMessage('Select a different stacked by field');
+	chartHelpers.device = {};
+	chartHelpers.device.type = GlideMobileExtensions.getDeviceType();
+
+	chartHelpers.systemParams = {
+		firstDay: (gs.getProperty("glide.ui.date_format.first_day_of_week", 2) - 1) % 7,
+		defaultDate: SNC.ReportUtil.getNowTimeInUSFormat(),
+		maxEventsDisplayedPerCell: gs.getProperty("glide.report.calendar.max_events_displayed_per_cell", 3),
+		maxMoreEventsPerDay: gs.getProperty("glide.report.calendar.max_more_events_per_day", 30),
+		defaultEventDuration: gs.getProperty("glide.report.calendar.default_event_duration", "01:00:00"),
+		maxDaysBack: gs.getProperty("glide.report.calendar.max_days_back", 30),
+		enablePreviewOnHover: gs.getProperty("glide.report.calendar.enable_preview_on_hover", false)
+	};
+
+		data.rectangleId = gs.generateGUID();
+		data.ch = chartHelpers;
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-07 05:55:35&lt;/sys_created_on&gt;&lt;sys_id&gt;08335ccbc300221089cf1c377d01316d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy of Report&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_08335ccbc300221089cf1c377d01316d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-07 05:55:35&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="report-widget-wrap"&gt;
+
+	&lt;h2 ng-if="c.showTitle" tabindex="0" id="{{'title-' + c.rectangleId }}" class="report-widget-title"&gt;{{c.title}}&lt;/h2&gt;
+
+	&lt;div id="report-widget-{{c.rectangleId}}"&gt;
+     {{::c.initialMessage}}
+  &lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>147029153</payload_hash>
+        <record_name>Copy of Report</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-07 05:55:35</sys_created_on>
+        <sys_id>c0339003c340221089cf1c377d013100</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1956f2c672f0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-07 05:55:35</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>84335003d0402210a004ab74f5b26bff</update_guid>
+        <update_guid_history>84335003d0402210a004ab74f5b26bff:147029153</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Report">808a34ccc3d4221089cf1c377d01319d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-10 11:21:17</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>1a3965652c214b318b5c1e035eb2b449</sys_id>
+        <sys_metadata>08335ccbc300221089cf1c377d01316d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Report</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_widget_08335ccbc300221089cf1c377d01316d</sys_update_name>
+        <sys_update_version display_value="sp_widget_08335ccbc300221089cf1c377d01316d">c0339003c340221089cf1c377d013100</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-10 11:21:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

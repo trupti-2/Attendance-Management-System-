@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+    box-sizing: border-box;&#13;
+    font-family: Arial, sans-serif;&#13;
+}&#13;
+body {&#13;
+    display: flex;&#13;
+    justify-content: center;&#13;
+    align-items: center;&#13;
+    height: 100vh;&#13;
+    background: linear-gradient(135deg, #667eea, #764ba2);&#13;
+}&#13;
+.login-container {&#13;
+    background: white;&#13;
+    padding: 2rem;&#13;
+    border-radius: 12px;&#13;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);&#13;
+    text-align: center;&#13;
+    width: 320px;&#13;
+}&#13;
+h2 {&#13;
+    margin-bottom: 1.5rem;&#13;
+    color: #333;&#13;
+}&#13;
+.input-field {&#13;
+    width: 100%;&#13;
+    padding: 10px;&#13;
+    margin: 10px 0;&#13;
+    border: 1px solid #ccc;&#13;
+    border-radius: 8px;&#13;
+    outline: none;&#13;
+    font-size: 16px;&#13;
+}&#13;
+.register-link {&#13;
+    width: 100%;&#13;
+    padding: 10px;&#13;
+    background: #667eea;&#13;
+    color: white;&#13;
+    border: none;&#13;
+    border-radius: 8px;&#13;
+    font-size: 18px;&#13;
+    cursor: pointer;&#13;
+    transition: background 0.3s;&#13;
+}&#13;
+.register-link:hover {&#13;
+    background: #5563c1;&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>attendance_login</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>LOGIN PAGE ATTENDANCE</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:15:26</sys_created_on>
+        <sys_id>7bf9d646c348221089cf1c377d013122</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>LOGIN PAGE ATTENDANCE</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_widget_7bf9d646c348221089cf1c377d013122</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:25:17</sys_updated_on>
+        <template><![CDATA[ <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" class="input-field" placeholder="Username">
+        <input type="password" class="input-field" placeholder="Password">
+        <a href="attendance" class="register-link">Login</a>
+    </div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>7bf9d646c348221089cf1c377d013122</id>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:14:25</sys_created_on>
+        <sys_id>feda1686c348221089cf1c377d01315b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:14:25</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_widget_7bf9d646c348221089cf1c377d013122</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;* {&amp;#13;
+    margin: 0;&amp;#13;
+    padding: 0;&amp;#13;
+    box-sizing: border-box;&amp;#13;
+    font-family: Arial, sans-serif;&amp;#13;
+}&amp;#13;
+body {&amp;#13;
+    display: flex;&amp;#13;
+    justify-content: center;&amp;#13;
+    align-items: center;&amp;#13;
+    height: 100vh;&amp;#13;
+    background: linear-gradient(135deg, #667eea, #764ba2);&amp;#13;
+}&amp;#13;
+.login-container {&amp;#13;
+    background: white;&amp;#13;
+    padding: 2rem;&amp;#13;
+    border-radius: 12px;&amp;#13;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);&amp;#13;
+    text-align: center;&amp;#13;
+    width: 320px;&amp;#13;
+}&amp;#13;
+h2 {&amp;#13;
+    margin-bottom: 1.5rem;&amp;#13;
+    color: #333;&amp;#13;
+}&amp;#13;
+.input-field {&amp;#13;
+    width: 100%;&amp;#13;
+    padding: 10px;&amp;#13;
+    margin: 10px 0;&amp;#13;
+    border: 1px solid #ccc;&amp;#13;
+    border-radius: 8px;&amp;#13;
+    outline: none;&amp;#13;
+    font-size: 16px;&amp;#13;
+}&amp;#13;
+.register-link {&amp;#13;
+    width: 100%;&amp;#13;
+    padding: 10px;&amp;#13;
+    background: #667eea;&amp;#13;
+    color: white;&amp;#13;
+    border: none;&amp;#13;
+    border-radius: 8px;&amp;#13;
+    font-size: 18px;&amp;#13;
+    cursor: pointer;&amp;#13;
+    transition: background 0.3s;&amp;#13;
+}&amp;#13;
+.register-link:hover {&amp;#13;
+    background: #5563c1;&amp;#13;
+}&amp;#13;
+&amp;#13;
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;attendance_login&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;LOGIN PAGE ATTENDANCE&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-04 13:15:26&lt;/sys_created_on&gt;&lt;sys_id&gt;7bf9d646c348221089cf1c377d013122&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;LOGIN PAGE ATTENDANCE&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_7bf9d646c348221089cf1c377d013122&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-04 13:25:17&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[ &lt;div class="login-container"&gt;
+        &lt;h2&gt;Login&lt;/h2&gt;
+        &lt;input type="text" class="input-field" placeholder="Username"&gt;
+        &lt;input type="password" class="input-field" placeholder="Password"&gt;
+        &lt;a href="attendance" class="register-link"&gt;Login&lt;/a&gt;
+    &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;7bf9d646c348221089cf1c377d013122&lt;/id&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-04 13:14:25&lt;/sys_created_on&gt;&lt;sys_id&gt;feda1686c348221089cf1c377d01315b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-04 13:14:25&lt;/sys_updated_on&gt;&lt;table&gt;sp_widget&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>532874805</payload_hash>
+        <record_name>LOGIN PAGE ATTENDANCE</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-04 13:25:17</sys_created_on>
+        <sys_id>865d1202c388221089cf1c377d01314a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195615509260000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-04 13:25:17</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>4e5d12027d882210c8d9c399f9cbf349</update_guid>
+        <update_guid_history>4e5d12027d882210c8d9c399f9cbf349:532874805,b06cda4ecf48221028b1e43aa20d7c7f:1298356707,651b9aca5148221077a7231283249562:-2023582433</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LOGIN PAGE ATTENDANCE">1d24e054c310221089cf1c377d01312e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 04:22:05</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>0f09ad4c8bb247dc9312e7e40809da19</sys_id>
+        <sys_metadata>7bf9d646c348221089cf1c377d013122</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LOGIN PAGE ATTENDANCE</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_widget_7bf9d646c348221089cf1c377d013122</sys_update_name>
+        <sys_update_version display_value="sp_widget_7bf9d646c348221089cf1c377d013122">865d1202c388221089cf1c377d01314a</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 04:22:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

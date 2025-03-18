@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <size>12</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">2685a0d4c310221089cf1c377d0131ee</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 04:28:10</sys_created_on>
+        <sys_id>6685a0d4c310221089cf1c377d0131f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_column_6685a0d4c310221089cf1c377d0131f1</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 04:28:10</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_column_6685a0d4c310221089cf1c377d0131f1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><semantic_tag/><size>12</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">2685a0d4c310221089cf1c377d0131ee</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-11 04:28:10</sys_created_on><sys_id>6685a0d4c310221089cf1c377d0131f1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sp_column_6685a0d4c310221089cf1c377d0131f1</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-11 04:28:10</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>1442660775</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>2420f18dc32bd61089cf1c377d01311c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 04:28:10</sys_created_on>
+        <sys_id>a68524d4c310221089cf1c377d0131b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1958375cf240000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 04:28:10</sys_updated_on>
+        <type>Column</type>
+        <update_guid>ae85a0d40d102210270c18a0a57747f2</update_guid>
+        <update_guid_history>ae85a0d40d102210270c18a0a57747f2:1442660775</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">539560d4c310221089cf1c377d013177</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-11 04:28:30</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>03c5643a80734d75808e47a7c1e5f5c1</sys_id>
+        <sys_metadata>6685a0d4c310221089cf1c377d0131f1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_column_6685a0d4c310221089cf1c377d0131f1</sys_update_name>
+        <sys_update_version display_value="sp_column_6685a0d4c310221089cf1c377d0131f1">a68524d4c310221089cf1c377d0131b3</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-11 04:28:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
