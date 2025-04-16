@@ -1,97 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function() {
-    var c = this;
+        <client_script><![CDATA[api.controller = function($scope, $element, spUtil) {
+    // Initialize variables
+    $scope.selectedEmployee = null;  // The selected employee
+    $scope.attendanceRecords = [];   // Holds all the attendance records
+    $scope.filteredRecords = [];    // Holds filtered records based on date search
+    $scope.searchDate = null;       // The date to filter attendance records
 
-    c.searchAttendance = function() {
-        if (!c.searchDate) {
-            c.data.filteredRecords = c.data.records; 
+    // Data for the Pie Chart (you can change the label, data, etc. dynamically)
+    $scope.labels = $scope.data.labels;
+    $scope.attendanceData = $scope.data.attendanceData;
+    $scope.employeeIDs = $scope.data.employeeIDs;
+
+    // Function to load Chart.js library if it's not loaded already
+    function loadChartJs(callback) {
+        if (typeof Chart !== 'undefined') {
+            callback();
             return;
         }
 
-        var selectedDate = new Date(c.searchDate);
-        selectedDate.setHours(selectedDate.getHours() + 5, selectedDate.getMinutes() + 30); 
-        var formattedSelectedDate = selectedDate.toISOString().split('T')[0]; 
+        var script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js';
+        script.onload = callback;
+        document.head.appendChild(script);
+    }
 
-        c.data.filteredRecords = c.data.records.filter(function(record) {
-            var recordDate = record.date.split(' ')[0];
+    // Load Chart.js and initialize the pie chart
+    loadChartJs(function() {
+        var canvas = $element.find("canvas")[0];
+        var ctx = canvas.getContext("2d");
+
+        var chartConfig = {
+            type: 'pie',
+            data: {
+                labels: $scope.labels,
+                datasets: [{
+                    data: $scope.attendanceData,
+                    backgroundColor: ["violet","#36A2EB", "#FF6384", "#FFCE56"]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return $scope.labels[tooltipItem.dataIndex]; // Show Employee Name + Percentage
+                            }
+                        }
+                    }
+                },
+                onClick: function(_, elements) {
+                    if (elements.length > 0) {
+                        var index = elements[0].index;
+                        var selectedEmp = $scope.employeeIDs[index];
+                        $scope.selectedEmployee = selectedEmp;
+                        refreshEmployeeRecords(selectedEmp); // Fetch records for the selected employee
+                        $scope.$apply();  // Ensure scope updates
+                    }
+                }
+            }
+        };
+
+        // Create the pie chart
+        $scope.chart = new Chart(ctx, chartConfig);
+    });
+
+    // Fetch and update attendance records for the selected employee
+    function refreshEmployeeRecords(employeeName) {
+        // Fetch data from server for the selected employee
+        spUtil.update($scope, { selectedEmployee: employeeName }).then(function(response) {
+            // Update attendance records after fetching from server
+            $scope.attendanceRecords = response.data.attendanceRecords;
+            $scope.filteredRecords = $scope.attendanceRecords; // Display all records initially
+        });
+    }
+
+    // Function to filter attendance records based on the selected date
+    $scope.searchAttendance = function() {
+        if (!$scope.searchDate) {
+            $scope.filteredRecords = $scope.attendanceRecords; // Show all records if no date is selected
+            return;
+        }
+
+        var selectedDate = new Date($scope.searchDate);
+        selectedDate.setHours(selectedDate.getHours() + 5, selectedDate.getMinutes() + 30); // Convert to IST
+
+        var formattedSelectedDate = selectedDate.toISOString().split('T')[0]; // Format date for comparison
+
+        $scope.filteredRecords = $scope.attendanceRecords.filter(function(record) {
+            var recordDate = record.date.split(' ')[0]; // Extract the date part
             return recordDate === formattedSelectedDate;
         });
     };
-
-    c.data.filteredRecords = c.data.records;
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>/* General styling */&#13;
+        <css>.attendance-chart-container {&#13;
+    width: 100%;&#13;
+    max-width: 500px;&#13;
+    margin: 0 auto;&#13;
+}&#13;
+&#13;
 .table-responsive {&#13;
-    background: #fff;&#13;
+    margin-top: 20px;&#13;
     padding: 15px;&#13;
     border-radius: 8px;&#13;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);&#13;
-    margin-top: 10px;&#13;
+    background-color: #f2f2f2;&#13;
 }&#13;
 &#13;
-/* Styling the heading */&#13;
-h3 {&#13;
-    font-size: 1.5rem;&#13;
-    font-weight: bold;&#13;
+.table-responsive h3 {&#13;
+    text-align: center;&#13;
     color: #333;&#13;
-    margin-bottom: 10px;&#13;
+    font-size: 42px;&#13;
+    margin-bottom: 30px;&#13;
 }&#13;
 &#13;
-/* Search input and button */&#13;
 .form-group {&#13;
     display: flex;&#13;
     align-items: center;&#13;
-    gap: 10px;&#13;
-    margin-bottom: 15px;&#13;
+    justify-content: center;&#13;
 }&#13;
 &#13;
-input[type="date"] {&#13;
-    padding: 6px 10px;&#13;
-    border-radius: 5px;&#13;
-    border: 1px solid #ccc;&#13;
+.form-control {&#13;
+    width: 40%;&#13;
 }&#13;
 &#13;
-button {&#13;
-    background-color: #007bff;&#13;
+.form-group label {&#13;
+    font-size: 20px;&#13;
+    font-weight: bold;&#13;
+    color: black;&#13;
+}&#13;
+&#13;
+.form-group button {&#13;
+    background-color: #a9c52f;&#13;
     color: white;&#13;
-    border: none;&#13;
-    padding: 6px 12px;&#13;
-    border-radius: 5px;&#13;
-    cursor: pointer;&#13;
+    border-radius: 10px;&#13;
+    font-weight: bold;&#13;
+    font-size: 16px;&#13;
 }&#13;
 &#13;
-button:hover {&#13;
-    background-color: #0056b3;&#13;
-}&#13;
-&#13;
-/* Table styling */&#13;
 .table {&#13;
     width: 100%;&#13;
+    margin-top: 20px;&#13;
     border-collapse: collapse;&#13;
+    text-align: left;&#13;
+    font-size: 14px;&#13;
 }&#13;
 &#13;
-.table thead {&#13;
-    background-color: #007bff;&#13;
+.table th {&#13;
+    background-color: #a9c52f;&#13;
     color: white;&#13;
+    padding: 12px;&#13;
+    text-align: center;&#13;
+    font-size: 16px;&#13;
 }&#13;
 &#13;
-.table th,&#13;
 .table td {&#13;
     padding: 10px;&#13;
-    text-align: center;&#13;
     border: 1px solid #ddd;&#13;
+    text-align: center;&#13;
+    font-size: 16px;&#13;
 }&#13;
 &#13;
-.table tbody tr:nth-child(even) {&#13;
-    background-color: #f8f9fa;&#13;
+.table tr:hover {&#13;
+    background-color: #f1f1f1;&#13;
 }&#13;
 &#13;
-.table tbody tr:hover {&#13;
-    background-color: #e9ecef;&#13;
+#searchDate {&#13;
+    background: white;&#13;
+    color: black;&#13;
+    font-size: 20px;&#13;
+    border-radius: 10px;&#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -109,84 +190,139 @@ button:hover {&#13;
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() { 
-    data.records = [];
+        <script><![CDATA[(function() {
+    var totalRecords = 0;
+    var employeeAttendance = {};
+    data.attendanceRecords = []; // Initialize the array
 
+    // Query the attendance data table
+    var gr = new GlideAggregate('x_1596199_attend_attendance_data');
+    gr.addAggregate('COUNT');
+    gr.groupBy('employee');
+    gr.query();
 
-    function convertToIST(utcDateTime) {
-        if (!utcDateTime) return "N/A";
-        var gdt = new GlideDateTime(utcDateTime);
-        gdt.addSeconds(19800);
-        return gdt.getValue();
+    // Process the records and group them by employee
+    while (gr.next()) {
+        var employeeName = gr.getDisplayValue('employee');
+        if (!employeeName) continue;
+
+        var count = parseInt(gr.getAggregate('COUNT'), 10);
+        employeeAttendance[employeeName] = count;
+        totalRecords += count;
     }
 
+    // Convert the attendance data into percentages for the Pie Chart
+    var attendanceData = [];
+    var attendanceLabels = [];
+    var employeeIDs = [];
 
-    // Fetch selected employee from input
+    for (var emp in employeeAttendance) {
+        var percentage = ((employeeAttendance[emp] / totalRecords) * 100).toFixed(2);
+        attendanceLabels.push(emp + " (" + percentage + "%)");
+        attendanceData.push(employeeAttendance[emp]);
+        employeeIDs.push(emp);
+    }
+
+    // Pass data to the client
+    data.labels = attendanceLabels;
+    data.attendanceData = attendanceData;
+    data.employeeIDs = employeeIDs;
+
+
     if (input && input.selectedEmployee) {
-        var gr = new GlideRecord('x_1596199_attend_attendance_data');
-        gr.addQuery('employee', input.selectedEmployee);
-        // gr.orderByDesc('sys_created_on');
-        gr.query();
+        var userGr = new GlideRecord('sys_user');
+        userGr.addQuery('name', input.selectedEmployee); // Query user by name
+        userGr.query();
 
+        if (userGr.next()) {
+            var employeeSysId = userGr.getValue('sys_id'); // Get employee sys_id
+            gs.info('Employee Sys ID: ' + employeeSysId); // Debugging log
 
-        var count = 1;
-        while (gr.next()) {
-            data.records.push({
-                srNo: count++,
-                date: convertToIST(gr.getValue('sys_created_on')),
-                checkIn: convertToIST(gr.getValue('check_in_time')),
-                checkOut: convertToIST(gr.getValue('check_out_time')),
-                status: gr.getValue('status'),
-                totalHours: gr.getValue('total_hours')
-            });
+            var recordGr = new GlideRecord('x_1596199_attend_attendance_data');
+            recordGr.addQuery('employee', employeeSysId); // Query attendance records by employee sys_id
+            recordGr.query();
+
+            data.attendanceRecords = []; // Initialize an empty array for records
+            var serialNo = 1; // Serial number for records
+
+            while (recordGr.next()) {
+                data.attendanceRecords.push({
+                    srNo: serialNo++, // Increment serial number
+                    date: convertToIST(recordGr.getValue('sys_created_on')), // Convert to IST
+                    checkIn: convertToIST(recordGr.getValue('check_in_time')), // Check-in time
+                    checkOut: convertToIST(recordGr.getValue('check_out_time')) || 'Not Checked Out', // Check-out time
+                    status: recordGr.getValue('status'), // Attendance status
+                    totalHours: recordGr.getValue('total_hours') // Total hours worked
+                });
+            }
         }
-    }
-})();]]></script>
+    } 
+})();
+
+
+
+// Helper function to convert UTC to IST
+function convertToIST(utcDateTime) {
+    if (!utcDateTime) return "N/A";
+    var gdt = new GlideDateTime(utcDateTime);
+    gdt.addSeconds(19800); // Add 5 hours 30 minutes (19800 seconds) to convert to IST
+    return gdt.getValue(); // Return date in 'yyyy-MM-dd HH:mm:ss' format
+}]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>truptibidave02</sys_created_by>
         <sys_created_on>2025-03-17 06:02:33</sys_created_on>
         <sys_id>ab347382c390221089cf1c377d0131fb</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>Employee wise history</sys_name>
         <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
         <sys_update_name>sp_widget_ab347382c390221089cf1c377d0131fb</sys_update_name>
         <sys_updated_by>truptibidave02</sys_updated_by>
-        <sys_updated_on>2025-03-17 06:51:54</sys_updated_on>
-        <template><![CDATA[<div class="table-responsive">
-    <h3>Attendance Records for {{data.selectedEmployee || 'No Employee Selected'}}</h3>
+        <sys_updated_on>2025-03-18 07:17:22</sys_updated_on>
+        <template><![CDATA[ <!-- Pie Chart Container -->
+     <div class="attendance-chart-container">
+     <canvas></canvas>
+     </div>
+<div ng-if="selectedEmployee">
+    <h3>Attendance Records for {{selectedEmployee}}</h3>
 
+    <!-- Search Bar for Date Filtering -->
     <div class="form-group">
         <label for="searchDate">Search by Date:</label>
-        <input type="date" class="form-control" id="searchDate" ng-model="c.searchDate">
-        <button class="btn btn-primary" ng-click="c.searchAttendance()">Search</button>
+        <input type="date" class="form-control" ng-model="searchDate">
+        <button class="btn btn" ng-click="searchAttendance()">Search</button>
     </div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>SR No.</th>
-                <th>Date</th>
-                <th>Check-in Time</th>
-                <th>Check-out Time</th>
-                <th>Status</th>
-                <th>Total Hours</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="record in c.data.filteredRecords">
-                <td>{{ record.srNo }}</td>      
-                <td>{{ record.date.split(' ')[0] }}</td> 
-                <td>{{ record.checkIn || "N/A" }}</td>
-                <td>{{ record.checkOut || "N/A" }}</td>
-                <td>{{ record.status }}</td>
-                <td>{{ record.totalHours }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Table for Attendance Records -->
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>SR No.</th>
+                    <th>Date</th>
+                    <th>Check-in Time</th>
+                    <th>Check-out Time</th>
+                    <th>Status</th>
+                    <th>Total Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="record in filteredRecords">
+                    <td>{{ record.srNo }}</td>
+                    <td>{{ record.date | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ record.checkIn || 'N/A' }}</td>
+                    <td>{{ record.checkOut || 'N/A' }}</td>
+                    <td>{{ record.status }}</td>
+                    <td>{{ record.totalHours }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
 ]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

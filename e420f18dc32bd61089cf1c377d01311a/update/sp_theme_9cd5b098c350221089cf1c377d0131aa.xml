@@ -6,6 +6,8 @@
     background-position: center;&#13;
     background-attachment: fixed;&#13;
 }&#13;
+&#13;
+&#13;
 </css_variables>
         <footer/>
         <footer_fixed>true</footer_fixed>
@@ -16,14 +18,14 @@
         <sys_created_by>truptibidave02</sys_created_by>
         <sys_created_on>2025-03-11 05:40:51</sys_created_on>
         <sys_id>9cd5b098c350221089cf1c377d0131aa</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Attendance project</sys_name>
         <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
         <sys_update_name>sp_theme_9cd5b098c350221089cf1c377d0131aa</sys_update_name>
         <sys_updated_by>truptibidave02</sys_updated_by>
-        <sys_updated_on>2025-03-11 05:59:34</sys_updated_on>
+        <sys_updated_on>2025-03-19 07:18:33</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>

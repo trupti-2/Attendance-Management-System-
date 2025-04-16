@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <decision_type>allow</decision_type>
+        <description/>
+        <local_or_existing>Local</local_or_existing>
+        <name>AttendanceDataAjax</name>
+        <operation display_value="execute">execute</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 05:24:45</sys_created_on>
+        <sys_id>6f95b822c350221089cf1c377d013183</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AttendanceDataAjax</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sys_security_acl_6f95b822c350221089cf1c377d013183</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 05:24:45</sys_updated_on>
+        <type display_value="client_callable_script_include">client_callable_script_include</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_security_acl_6f95b822c350221089cf1c377d013183</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><decision_type>allow</decision_type><description/><local_or_existing>Local</local_or_existing><name>AttendanceDataAjax</name><operation display_value="execute">execute</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-18 05:24:45</sys_created_on><sys_id>6f95b822c350221089cf1c377d013183</sys_id><sys_mod_count>0</sys_mod_count><sys_name>AttendanceDataAjax</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sys_security_acl_6f95b822c350221089cf1c377d013183</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-18 05:24:45</sys_updated_on><type display_value="client_callable_script_include">client_callable_script_include</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-417026428</payload_hash>
+        <record_name>AttendanceDataAjax</record_name>
+        <reverted_from/>
+        <source>dd23f46ec310221089cf1c377d0131b4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 05:24:46</sys_created_on>
+        <sys_id>7b95f462c350221089cf1c377d013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195a7b6228e0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 05:24:46</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>7f95f462c65022103bf76225e3487d08</update_guid>
+        <update_guid_history>7f95f462c65022103bf76225e3487d08:-417026428</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-19 05:42:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>4e093c7ed2114a409e9b646c7e98ae40</sys_id>
+        <sys_metadata>6f95b822c350221089cf1c377d013183</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AttendanceDataAjax</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_security_acl_6f95b822c350221089cf1c377d013183</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_6f95b822c350221089cf1c377d013183">7b95f462c350221089cf1c377d013109</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-19 05:42:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

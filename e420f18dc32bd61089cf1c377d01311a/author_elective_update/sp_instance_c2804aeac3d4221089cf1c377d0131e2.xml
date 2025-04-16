@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">2875f12ec394221089cf1c377d01318d</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 10:52:04</sys_created_on>
+        <sys_id>c2804aeac3d4221089cf1c377d0131e2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>HTML</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_instance_c2804aeac3d4221089cf1c377d0131e2</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 10:54:46</sys_updated_on>
+        <title>HTML</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<p><button id=\"a\">Hii</button></p>",
+		"displayValue": "<p><button id=\"a\">Hii</button></p>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=c2804aeac3d4221089cf1c377d0131e2"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_instance_c2804aeac3d4221089cf1c377d0131e2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;2875f12ec394221089cf1c377d01318d&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;truptibidave02&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-18 10:52:04&lt;/sys_created_on&gt;&lt;sys_id&gt;c2804aeac3d4221089cf1c377d0131e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;HTML&lt;/sys_name&gt;&lt;sys_package display_value="Attendance Management System" source="x_1596199_attend"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Attendance Management System"&gt;e420f18dc32bd61089cf1c377d01311a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_c2804aeac3d4221089cf1c377d0131e2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;truptibidave02&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-18 10:54:46&lt;/sys_updated_on&gt;&lt;title&gt;HTML&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;p&gt;&lt;button id=\"a\"&gt;Hii&lt;/button&gt;&lt;/p&gt;",
+		"displayValue": "&lt;p&gt;&lt;button id=\"a\"&gt;Hii&lt;/button&gt;&lt;/p&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=c2804aeac3d4221089cf1c377d0131e2"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-332276901</payload_hash>
+        <record_name>HTML</record_name>
+        <reverted_from/>
+        <source>dd23f46ec310221089cf1c377d0131b4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 10:54:46</sys_created_on>
+        <sys_id>71218a2ec3d4221089cf1c377d0131ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195a8e442d90000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 10:54:46</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>f5218a2e0ad42210726b23d32ed8ddeb</update_guid>
+        <update_guid_history>f5218a2e0ad42210726b23d32ed8ddeb:-332276901,85f00eea3bd42210e8f61d93a77b279d:-1931859064,8790c2aa91d42210fcc80709aeffafde:730330724,8e804aea52d4221022f187d863a51ae3:492777432</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="HTML">8841ca2ec3d4221089cf1c377d013193</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 10:55:12</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>7b282de6e14440a0867090a5a5970ff9</sys_id>
+        <sys_metadata>c2804aeac3d4221089cf1c377d0131e2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HTML</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_instance_c2804aeac3d4221089cf1c377d0131e2</sys_update_name>
+        <sys_update_version display_value="sp_instance_c2804aeac3d4221089cf1c377d0131e2">71218a2ec3d4221089cf1c377d0131ec</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 10:55:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

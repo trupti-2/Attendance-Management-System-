@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <display_field/>
+        <field_list>active,work_start,assigned_to,work_end</field_list>
+        <filter/>
+        <glyph>star-o</glyph>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>2</order>
+        <order_by>active</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">d9778f83c350221089cf1c377d0131c0</sp_column>
+        <sp_page display_value="demo">e2f603c3c350221089cf1c377d0131c9</sp_page>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-20 05:34:37</sys_created_on>
+        <sys_id>270b8707c350221089cf1c377d013112</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>table</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_update_name>sp_instance_table_270b8707c350221089cf1c377d013112</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-20 05:40:39</sys_updated_on>
+        <table>incident</table>
+        <title>table</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="DELETE" query="documentkey=270b8707c350221089cf1c377d013112"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sp_instance_table_270b8707c350221089cf1c377d013112</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table"><sp_instance_table action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>primary</color><css/><display_field/><field_list>active,work_start,assigned_to,work_end</field_list><filter/><glyph>star-o</glyph><id/><maximum_entries>5</maximum_entries><order>2</order><order_by>active</order_by><order_direction>asc</order_direction><roles/><short_description/><size>md</size><sp_column display_value="1">d9778f83c350221089cf1c377d0131c0</sp_column><sp_page display_value="demo">e2f603c3c350221089cf1c377d0131c9</sp_page><sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget><sys_class_name>sp_instance_table</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-20 05:34:37</sys_created_on><sys_id>270b8707c350221089cf1c377d013112</sys_id><sys_mod_count>3</sys_mod_count><sys_name>table</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_update_name>sp_instance_table_270b8707c350221089cf1c377d013112</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-20 05:40:39</sys_updated_on><table>incident</table><title>table</title><url/><widget_parameters/></sp_instance_table><sys_translated_text action="delete_multiple" query="documentkey=270b8707c350221089cf1c377d013112"/></record_update>]]></payload>
+        <payload_hash>-2053804103</payload_hash>
+        <record_name>table</record_name>
+        <reverted_from/>
+        <source>dd23f46ec310221089cf1c377d0131b4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-20 05:40:39</sys_created_on>
+        <sys_id>776c878bc350221089cf1c377d0131dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195b21165c00000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-20 05:40:39</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>fb6c878b5450221087009f59e5948cdb</update_guid>
+        <update_guid_history>fb6c878b5450221087009f59e5948cdb:-2053804103,084cc74bfb5022100fdd66dd89dd4ad9:-1183246328,b49b474b7a5022100eb18d8f470858d4:953268967,ef0b87076e502210678fbcc526a47f13:-527997106</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="table">07ecc3cbc350221089cf1c377d01318e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-20 05:42:47</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>28869813c03c4a3486961d1fc3f1f9b9</sys_id>
+        <sys_metadata>270b8707c350221089cf1c377d013112</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>table</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sp_instance_table_270b8707c350221089cf1c377d013112</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_270b8707c350221089cf1c377d013112">776c878bc350221089cf1c377d0131dc</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-20 05:42:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

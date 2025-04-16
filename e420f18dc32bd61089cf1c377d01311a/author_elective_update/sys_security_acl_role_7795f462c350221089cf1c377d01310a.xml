@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 05:24:46</sys_created_on>
+        <sys_id>7795f462c350221089cf1c377d01310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AttendanceDataAjax.admin</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_security_acl display_value="AttendanceDataAjax">6f95b822c350221089cf1c377d013183</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_7795f462c350221089cf1c377d01310a</sys_update_name>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 05:24:46</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</application>
+        <file_path/>
+        <instance_id>d87572e1db854694ebdd2a59139619b7</instance_id>
+        <instance_name>dev246141</instance_name>
+        <name>sys_security_acl_role_7795f462c350221089cf1c377d01310a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>truptibidave02</sys_created_by><sys_created_on>2025-03-18 05:24:46</sys_created_on><sys_id>7795f462c350221089cf1c377d01310a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>AttendanceDataAjax.admin</sys_name><sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package><sys_policy/><sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope><sys_security_acl display_value="AttendanceDataAjax">6f95b822c350221089cf1c377d013183</sys_security_acl><sys_update_name>sys_security_acl_role_7795f462c350221089cf1c377d01310a</sys_update_name><sys_updated_by>truptibidave02</sys_updated_by><sys_updated_on>2025-03-18 05:24:46</sys_updated_on><sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-2102465586</payload_hash>
+        <record_name>AttendanceDataAjax.admin</record_name>
+        <reverted_from/>
+        <source>dd23f46ec310221089cf1c377d0131b4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-18 05:24:46</sys_created_on>
+        <sys_id>3b95f462c350221089cf1c377d01311d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195a7b6230c0000001</sys_recorded_at>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-18 05:24:46</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>7795f4620d502210f8dbd78a4265bf10</update_guid>
+        <update_guid_history>7795f4620d502210f8dbd78a4265bf10:-2102465586</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="AttendanceDataAjax.admin">3a234e72c350221089cf1c377d0131c4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>truptibidave02</sys_created_by>
+        <sys_created_on>2025-03-19 05:42:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>334245722a504024a035f1f39c2419f1</sys_id>
+        <sys_metadata>7795f462c350221089cf1c377d01310a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AttendanceDataAjax.admin</sys_name>
+        <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
+        <sys_scope_delete display_value="">3b0cb8ae7917471eb0d03dc020352641</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_7795f462c350221089cf1c377d01310a</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_7795f462c350221089cf1c377d01310a">3b95f462c350221089cf1c377d01311d</sys_update_version>
+        <sys_updated_by>truptibidave02</sys_updated_by>
+        <sys_updated_on>2025-03-19 05:42:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

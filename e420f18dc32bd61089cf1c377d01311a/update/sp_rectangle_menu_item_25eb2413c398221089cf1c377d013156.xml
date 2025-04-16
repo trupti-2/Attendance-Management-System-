@@ -7,36 +7,36 @@
         <display_2/>
         <display_date/>
         <filter/>
-        <glyph>history</glyph>
+        <glyph>list</glyph>
         <hint/>
         <kb_article/>
         <kb_category/>
         <kb_topic/>
-        <label>History</label>
-        <order>100</order>
+        <label>Request Checkout Time</label>
+        <order>300</order>
         <record_script/>
-        <sc_cat_item/>
+        <sc_cat_item display_value="Request for Changing Checkout Time">27773fc7c354221089cf1c377d01316a</sc_cat_item>
         <sc_category/>
         <short_description/>
-        <sp_page display_value="attendance_history_page">8d6f0b15c36b121089cf1c377d0131d8</sp_page>
+        <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
         <sp_rectangle_menu display_value="Attendance">035e7098c390221089cf1c377d0131f3</sp_rectangle_menu>
         <sp_rectangle_menu_item/>
         <sys_class_name>sp_rectangle_menu_item</sys_class_name>
         <sys_created_by>truptibidave02</sys_created_by>
-        <sys_created_on>2025-03-11 06:19:01</sys_created_on>
-        <sys_id>6e8eb498c390221089cf1c377d013137</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>History</sys_name>
+        <sys_created_on>2025-03-20 12:38:56</sys_created_on>
+        <sys_id>25eb2413c398221089cf1c377d013156</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Request Checkout Time</sys_name>
         <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
-        <sys_update_name>sp_rectangle_menu_item_6e8eb498c390221089cf1c377d013137</sys_update_name>
+        <sys_update_name>sp_rectangle_menu_item_25eb2413c398221089cf1c377d013156</sys_update_name>
         <sys_updated_by>truptibidave02</sys_updated_by>
-        <sys_updated_on>2025-03-21 05:52:09</sys_updated_on>
+        <sys_updated_on>2025-03-21 05:50:30</sys_updated_on>
         <table/>
-        <type>url</type>
-        <url>https://dev246141.service-now.com/attendance?id=attendance_history_page</url>
+        <type>sc_cat_item</type>
+        <url/>
         <url_target/>
     </sp_rectangle_menu_item>
-    <sys_translated_text action="delete_multiple" query="documentkey=6e8eb498c390221089cf1c377d013137"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=25eb2413c398221089cf1c377d013156"/>
 </record_update>

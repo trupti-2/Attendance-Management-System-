@@ -7,7 +7,7 @@
         <display_2/>
         <display_date/>
         <filter/>
-        <glyph>bar-chart</glyph>
+        <glyph>pie-chart</glyph>
         <hint/>
         <kb_article/>
         <kb_category/>
@@ -25,14 +25,14 @@
         <sys_created_by>truptibidave02</sys_created_by>
         <sys_created_on>2025-03-11 06:22:05</sys_created_on>
         <sys_id>642f7058c390221089cf1c377d0131b7</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Dashboard(HR)</sys_name>
         <sys_package display_value="Attendance Management System" source="x_1596199_attend">e420f18dc32bd61089cf1c377d01311a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Attendance Management System">e420f18dc32bd61089cf1c377d01311a</sys_scope>
         <sys_update_name>sp_rectangle_menu_item_642f7058c390221089cf1c377d0131b7</sys_update_name>
         <sys_updated_by>truptibidave02</sys_updated_by>
-        <sys_updated_on>2025-03-11 06:29:58</sys_updated_on>
+        <sys_updated_on>2025-03-21 05:52:26</sys_updated_on>
         <table/>
         <type>page</type>
         <url>https://dev246141.service-now.com/attendance?id=dashboard</url>
